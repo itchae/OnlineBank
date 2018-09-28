@@ -18,9 +18,9 @@ import org.springframework.web.servlet.ModelAndView;
  * @author lucille
  */
 @Controller
-public class LoginController {
+public class consultAccount {
     
-    @RequestMapping(value="index", method = RequestMethod.POST)
+    @RequestMapping(value="consultAccount", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
@@ -36,8 +36,10 @@ public class LoginController {
         }
     }
     
-    @RequestMapping(value="index", method = RequestMethod.GET)
-    public String initIndex(){
-	return "index";
+    @RequestMapping(value="consultAccount", method = RequestMethod.GET)
+    public ModelAndView initIndex(){
+        ModelAndView pasCo = new ModelAndView();
+        pasCo.addObject("listAccount");
+        return pasCo; 
     }
 }

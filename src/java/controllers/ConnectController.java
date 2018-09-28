@@ -26,10 +26,6 @@ public class ConnectController {
     @Autowired
     private ConnectService service;
     
-    @RequestMapping(value="index", method = RequestMethod.GET)
-    public String initIndex(){
-	return "index";
-    }
     @RequestMapping(value="connect", method = RequestMethod.GET)
     public String initConnect(){
 	return "connect";
@@ -38,7 +34,7 @@ public class ConnectController {
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
-        ModelAndView mv = new ModelAndView("connect");
+        ModelAndView mv = new ModelAndView("listAccount");
         ModelAndView error = new ModelAndView("index");
         String login = request.getParameter("login");
         String mdp = request.getParameter("mdp");

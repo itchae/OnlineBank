@@ -9,9 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Consultation</title>
     </head>
     <body>
         <h1>Consultation du compte</h1>
+        
+        <form method="GET" action="listAccount.htm">
+            <!-- Service ? -->
+            <input type="submit" value="Retour à la liste des comptes"/>
+        </form>
     </body>
 </html>
