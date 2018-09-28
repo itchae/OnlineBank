@@ -35,4 +35,9 @@ public class LoginController {
             return pasCo; 
         }
     }
+    @RequestMapping(value="index", method = RequestMethod.GET)
+    public String initIndex(){
+	return "index";
+    }
+
 }

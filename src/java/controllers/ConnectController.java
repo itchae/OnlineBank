@@ -26,10 +26,6 @@ public class ConnectController {
     @Autowired
     private ConnectService service;
     
-    @RequestMapping(value="index", method = RequestMethod.GET)
-    public String initIndex(){
-	return "index";
-    }
     @RequestMapping(value="connect", method = RequestMethod.GET)
     public String initConnect(){
 	return "connect";
@@ -38,15 +34,22 @@ public class ConnectController {
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
-        ModelAndView mv = new ModelAndView("connect");
-        ModelAndView error = new ModelAndView("index");
-        String login = request.getParameter("login");
-        String mdp = request.getParameter("mdp");
-        mv.addObject("welcome", service.welcome(login)); 
-        if(login.equals("toto") && mdp.equals("tata")){
-            return mv; 
+        HttpSession session = request.getSession(false);
+        if (session == null){
+            ModelAndView mv = new ModelAndView("connect");
+            ModelAndView error = new ModelAndView("index");
+            String login = request.getParameter("login");
+            String mdp = request.getParameter("mdp");
+            mv.addObject("welcome", service.welcome(login)); 
+            if(login.equals("toto") && mdp.equals("tata")){
+                session = request.getSession();
+                return mv; 
+            }
+            return error;
+            }
+        else{
+            return new ModelAndView("listAccount");
         }
-        return error;
     }
     
 }
