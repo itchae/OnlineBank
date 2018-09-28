@@ -9,10 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Liste des comptes</title>
     </head>
     <body>
         <h1>Liste des comptes</h1>
-        <a href="index.htm">Test compte</a>
+        <!-- Il faut rechercher combien de comptes il y a,
+        créer le nombre d'input en fonction, avec les bons noms,
+        service ? -->
+        <form method="GET" action="consultAccount.htm">
+            <input type="submit" value="Test compte"></input><br/>
+            <input type="submit" value="Test2"></input>
+        </form>
     </body>
 </html>

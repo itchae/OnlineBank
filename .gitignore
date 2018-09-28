@@ -24,4 +24,5 @@ hs_err_pid*
 /OnlineBank/nbproject/private/
 /OnlineBank/build/
 /build/
-/nbproject/private/
+/OnlineBank/nbproject/
+.DS_Store
