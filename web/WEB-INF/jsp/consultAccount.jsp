@@ -12,11 +12,8 @@
         <title>Consultation</title>
     </head>
     <body>
+        <jsp:include page="navbar.jsp"/>
         <h1>Consultation du compte</h1>
-        
-        <form method="GET" action="listAccount.htm">
-            <!-- Service ? -->
-            <input type="submit" value="Retour à la liste des comptes"/>
-        </form>
+        <a href="listAccount.htm">Retour à la liste des comptes</a>
     </body>
 </html>

@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="navbar.jsp"/>
         <h1>Messagerie</h1>
     </body>
 </html>

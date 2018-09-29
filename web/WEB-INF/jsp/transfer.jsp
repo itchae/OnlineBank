@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="navbar.jsp"/>
+
         <h1>Transfer page</h1>
     </body>
 </html>

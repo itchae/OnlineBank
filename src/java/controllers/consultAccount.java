@@ -31,15 +31,31 @@ public class consultAccount {
             return co; 
         }else{
             ModelAndView pasCo = new ModelAndView();
-            pasCo.addObject("listAccount");
+            pasCo.addObject("consultAccount");
             return pasCo; 
         }
     }
     
-    @RequestMapping(value="consultAccount", method = RequestMethod.GET)
+    /*@RequestMapping(value="consultAccount", method = RequestMethod.GET)
     public ModelAndView initIndex(){
-        ModelAndView pasCo = new ModelAndView();
-        pasCo.addObject("listAccount");
+        ModelAndView pasCo = new ModelAndView("consultAccount");
         return pasCo; 
+    }*/
+    
+    
+    
+  @RequestMapping(value = "consultAccount", method = RequestMethod.GET)
+  public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
+    ModelAndView mav = null;
+    HttpSession session = request.getSession(false);
+    if(session == null){
+        mav = new ModelAndView("error");
+    }else{
+        mav = new ModelAndView("consultAccount");
     }
+    
+    //mav.addObject("login", new Login());
+    return mav;
+  }
+    
 }

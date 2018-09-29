@@ -12,13 +12,12 @@
         <title>Liste des comptes</title>
     </head>
     <body>
+        <jsp:include page="navbar.jsp"/>
         <h1>Liste des comptes</h1>
         <!-- Il faut rechercher combien de comptes il y a,
         créer le nombre d'input en fonction, avec les bons noms,
         service ? -->
-        <form method="GET" action="consultAccount.htm">
-            <input type="submit" value="Test compte"></input><br/>
-            <input type="submit" value="Test2"></input>
-        </form>
+        <a href="consultAccount.htm">Compte1</a>
+        <a href="consultAccount.htm">Compte2</a>
     </body>
 </html>
