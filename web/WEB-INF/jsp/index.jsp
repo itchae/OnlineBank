@@ -11,11 +11,12 @@
 
     <body>
         <H1>Page de connexion: </H1>
-       <FORM method="POST" ACTION="home.htm">
+        <FORM method="POST" ACTION="home.htm">
            <P> Entrez votre login : <INPUT Type=text Name=login> </P>
 	   <P> Entrez votre mot de passe : <INPUT Type=text Name=mdp></P>
 	   <P> <INPUT Type=submit VALUE="OK"> </P>
 	</FORM>
+        
     </body>
 </html>
 

@@ -9,7 +9,7 @@
 
 <ul>
     <li><a href="listAccount.htm">Liste des comptes</a></li>
-    <li><a href="transfer.jsp">Virement</a></li>
+    <li><a href="transfer.htm">Virement</a></li>
     <li><a href="#">Ordre de bourse</a></li>
-    <li><a href="#">Paramètre du compte</a></li>
+    <li><a href="parameter.htm">Paramètre du compte</a></li>
 </ul>

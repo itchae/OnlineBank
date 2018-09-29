@@ -17,7 +17,12 @@
         <!-- Il faut rechercher combien de comptes il y a,
         créer le nombre d'input en fonction, avec les bons noms,
         service ? -->
-        <a href="consultAccount.htm">Compte1</a>
-        <a href="consultAccount.htm">Compte2</a>
+        <ul>
+        <% for (int i=0; i<10; i++) { %>
+        <li>
+            <a href="consultAccount.htm">Compte <%= i %> </a>
+        </li>
+        <% }%>
+        </ul>
     </body>
 </html>
