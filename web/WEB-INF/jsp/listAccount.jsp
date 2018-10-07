@@ -13,6 +13,7 @@
     </head>
     <body>
         <jsp:include page="navbar.jsp"/>
+        <p>${welcome}</p>
         <h1>Liste des comptes</h1>
         <!-- Il faut rechercher combien de comptes il y a,
         créer le nombre d'input en fonction, avec les bons noms,

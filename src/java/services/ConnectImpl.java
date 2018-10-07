@@ -16,7 +16,7 @@ public class ConnectImpl implements ConnectService{
 
     @Override
     public String welcome(String nom) {
-        return "Bienvenue"+nom;
+        return "Bienvenue "+ nom;
     }
     
 }
