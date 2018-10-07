@@ -28,10 +28,11 @@ public class LoginController {
     @Autowired
     private ConnectService service;
     
-    @RequestMapping(value="home", method = RequestMethod.POST)
+    @RequestMapping(value="index", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
+        HttpSession session = request.getSession(false);
         ModelAndView mav = null;
         HttpSession session = request.getSession();
         String login;

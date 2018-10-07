@@ -46,8 +46,7 @@ public class ConnectController {
                 return mv; 
             }
             return error;
-            }
-        else{
+        }else{
             return new ModelAndView("listAccount");
         }
     }

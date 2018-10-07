@@ -14,5 +14,11 @@
     <body>
         <jsp:include page="navbar.jsp"/>
         <h1>Parameters</h1>
+        <FORM method="POST" ACTION="parameter.htm">
+           <P> E-Mail : <INPUT Type=text Name=mail> </P>
+	   <P> Mot de Passe : <INPUT Type=text Name=mpdchange></P>
+           <P> Confirmez le mot de passe : <INPUT Type=text Name=mdpconf></P>
+	   <P> <INPUT Type=submit VALUE="OK"> </P>
+	</FORM>
     </body>
 </html>
