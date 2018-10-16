@@ -32,19 +32,23 @@ public class LoginController {
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
-        //HttpSession session = request.getSession(false);
         ModelAndView mav = null;
         HttpSession session = request.getSession();
         String login;
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            if(login.equals("toto") && mdp.equals("tata")){
+            if(service.connection(login, mdp)){
+                session.setAttribute("login", login);
+            }else{
+                return new ModelAndView("errorLogin");
+            }
+            /*if(login.equals("toto") && mdp.equals("tata")){
                 session.setAttribute("login", login);
             }
             else{
                 return new ModelAndView("errorLogin");
-            }
+            }*/
         }
         else{
             login = (String)session.getAttribute("login");
@@ -66,9 +70,10 @@ public class LoginController {
   }
     
     @RequestMapping(value="errorLogin", method = RequestMethod.GET)
-    public ModelAndView errorLoginRedirect(){
-        ModelAndView loginPage = new ModelAndView("login");
-	return loginPage;
+    public String errorLoginRedirect(){
+        return "login";
+        //ModelAndView loginPage = new ModelAndView("login");
+	//return loginPage;
     }
     
     @RequestMapping(value = "logout", method = RequestMethod.GET)

@@ -11,4 +11,5 @@ package services;
  */
 public interface ConnectService {
     public String welcome(String nom);
+    public boolean connection(String mdp, String pwd);
 }

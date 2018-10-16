@@ -19,5 +19,9 @@ public class ConnectImpl implements ConnectService{
         return "Bienvenue "+ nom;
     }
     
+    @Override
+    public boolean connection(String mdp, String pwd){
+        return true; 
+    }
     
 }
