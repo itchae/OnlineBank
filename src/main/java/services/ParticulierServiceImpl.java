@@ -21,28 +21,29 @@ public class ParticulierServiceImpl implements ParticulierService{
     ParticulierDAO particulierDao;
     
     @Override
-    public String getLogin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getLogin(int id) {
+        return this.particulierDao.find(id).getLogin();
     }
 
     @Override
     public String getMdp(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.particulierDao.find(id).getPassword();
     }
 
     @Override
     public String getEmail(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.particulierDao.find(id).getEmail();
+                
     }
 
     @Override
     public String getPhone(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.particulierDao.find(id).getTel();
     }
 
     @Override
     public String getAdresse(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.particulierDao.find(id).getAdresse();
     }
 
     @Override

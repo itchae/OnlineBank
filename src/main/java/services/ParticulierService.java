@@ -10,7 +10,7 @@ package services;
  * @author lucille
  */
 public interface ParticulierService {
-    public String getLogin();
+    public String getLogin(int id);
     public String getMdp(int id);
     public String getEmail(int id);
     public String getPhone(int id);
