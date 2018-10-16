@@ -17,5 +17,5 @@ public interface ParticulierDAO {
     public void delete(ParticulierEntity h);
     public ParticulierEntity find(long id);
     public List<ParticulierEntity> findAll();
-    public List<ParticulierEntity> findByName(ParticulierEntity h, String nom);
+    public List<ParticulierEntity> findByName(String nom);
 }

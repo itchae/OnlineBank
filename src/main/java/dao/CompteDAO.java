@@ -17,5 +17,5 @@ public interface CompteDAO {
     public void delete(CompteEntity c);
     public CompteEntity find(long id);
     public List<CompteEntity> findAll();
-    public List<CompteEntity> findByName(CompteEntity c, String nom);
+    public List<CompteEntity> findByName(String nom);
 }

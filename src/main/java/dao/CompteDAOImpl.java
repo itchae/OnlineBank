@@ -48,14 +48,14 @@ public class CompteDAOImpl implements CompteDAO{
     @Transactional(readOnly = true)
     @Override
     public List<CompteEntity> findAll() {
-        Query q = em.createQuery("SELECT h FROM HelloEntity h");
+        Query q = em.createQuery("SELECT c FROM CompteEntity c");
         return q.getResultList();
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<CompteEntity> findByName(CompteEntity comp, String nom) {
-        Query q = em.createQuery("SELECT h FROM HelloEntity h WHERE h.nom = ? ").setParameter(1, nom);
+    public List<CompteEntity> findByName(String nom) {
+        Query q = em.createQuery("SELECT c FROM CompteEntity c WHERE c.nom = ? ").setParameter(1, nom);
         return q.getResultList();
     }
     
