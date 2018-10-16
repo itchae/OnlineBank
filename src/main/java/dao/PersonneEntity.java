@@ -27,6 +27,15 @@ public class PersonneEntity implements Serializable {
     
     @Column
     private String nom;
+    
+    @Column
+    private String prenom;
+    
+    @Column 
+    private String email;
+    
+    @Column
+    private String adresse;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -47,16 +56,6 @@ public class PersonneEntity implements Serializable {
     public String getAdresse() {
         return adresse;
     }
-    
-    @Column
-    private String prenom;
-    
-    @Column 
-    private String email;
-    
-    @Column
-    private String adresse;
-    
     
     public Long getId() {
         return id;
