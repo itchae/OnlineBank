@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import services.ConnectService;
+import services.ParticulierService;
 
 /**
  *
@@ -26,7 +27,10 @@ import services.ConnectService;
 public class LoginController {
     
     @Autowired
-    private ConnectService service;
+    private ParticulierService service;
+    
+    @Autowired 
+    private ConnectService coService;
     
     @RequestMapping(value="index", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
@@ -38,7 +42,7 @@ public class LoginController {
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            if(service.connection(login, mdp)){
+            if(service.tryConnect(login, mdp)){
                 session.setAttribute("login", login);
             }else{
                 return new ModelAndView("errorLogin");
@@ -54,7 +58,7 @@ public class LoginController {
             login = (String)session.getAttribute("login");
         }
         mav = new ModelAndView("listAccount");
-        mav.addObject("welcome", service.welcome(login)); 
+        mav.addObject("welcome", coService.welcome(login)); 
         return mav;
     }
     
