@@ -30,6 +30,7 @@ public class ConnectController {
     public String initConnect(){
 	return "connect";
     }
+    
     @RequestMapping(value="connect", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 

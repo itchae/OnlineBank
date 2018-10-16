@@ -119,12 +119,12 @@ public class AnimalKeeperController {
     protected ModelAndView handleAffichage(HttpServletRequest request, HttpServletResponse response) throws Exception {
       
            
-            ModelAndView mv = new ModelAndView("display");
-            String listeAnimals = animalService.printAnimals();
-            String listeKeepers = keeperService.printKeepers();
-           
-            mv.addObject("listeAnimals", listeAnimals);
-            mv.addObject("listeKeepers", listeKeepers);
-            return mv;
+        ModelAndView mv = new ModelAndView("display");
+        String listeAnimals = animalService.printAnimals();
+        String listeKeepers = keeperService.printKeepers();
+
+        mv.addObject("listeAnimals", listeAnimals);
+        mv.addObject("listeKeepers", listeKeepers);
+        return mv;
     }
 }
