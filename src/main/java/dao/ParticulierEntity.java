@@ -11,13 +11,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
  *
  * @author lucille
  */
 @Entity
-public class PersonneEntity implements Serializable {
+public class ParticulierEntity extends CompteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -76,10 +78,10 @@ public class PersonneEntity implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PersonneEntity)) {
+        if (!(object instanceof ParticulierEntity)) {
             return false;
         }
-        PersonneEntity other = (PersonneEntity) object;
+        ParticulierEntity other = (ParticulierEntity) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -88,7 +90,7 @@ public class PersonneEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "dao.PersonneEntity[ id=" + id + " ]";
+        return "dao.ParticulierEntity[ id=" + id + " ]";
     }
     
 }

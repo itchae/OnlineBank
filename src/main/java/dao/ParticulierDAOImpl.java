@@ -15,46 +15,46 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author lucille
  */
-public class PersonneDAOImpl implements PersonneDAO{
+public class ParticulierDAOImpl implements ParticulierDAO{
 
-    @PersistenceContext(unitName="PersonnePU")
+    @PersistenceContext(unitName="OnlineBankPU")
     private EntityManager em;
     
     @Transactional
     @Override
-    public void save(PersonneEntity pers) {
+    public void save(ParticulierEntity pers) {
         pers = em.merge(pers);
     }
 
     @Transactional
     @Override
-    public void update(PersonneEntity pers) {
+    public void update(ParticulierEntity pers) {
         em.merge(pers);
     }
 
     @Transactional
     @Override
-    public void delete(PersonneEntity pers) {
+    public void delete(ParticulierEntity pers) {
         pers = em.merge(pers);
         em.remove(pers);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public PersonneEntity find(long id) {
-        return em.find(PersonneEntity.class, id);
+    public ParticulierEntity find(long id) {
+        return em.find(ParticulierEntity.class, id);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<PersonneEntity> findAll() {
+    public List<ParticulierEntity> findAll() {
         Query q = em.createQuery("SELECT h FROM HelloEntity h");
         return q.getResultList();
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<PersonneEntity> findByName(PersonneEntity pers, String nom) {
+    public List<ParticulierEntity> findByName(ParticulierEntity pers, String nom) {
         Query q = em.createQuery("SELECT h FROM HelloEntity h WHERE h.nom = ? ").setParameter(1, nom);
         return q.getResultList();
     }

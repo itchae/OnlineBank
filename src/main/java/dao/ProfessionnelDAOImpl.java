@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ *
+ * @author tbonnion
+ */
+public class ProfessionnelDAOImpl implements ProfessionnelDAO{
+
+    @PersistenceContext(unitName="OnlineBankPU")
+    private EntityManager em;
+    
+    @Transactional
+    @Override
+    public void save(ProfessionnelEntity pro) {
+        pro = em.merge(pro);
+    }
+
+    @Transactional
+    @Override
+    public void update(ProfessionnelEntity pro) {
+        em.merge(pro);
+    }
+
+    @Transactional
+    @Override
+    public void delete(ProfessionnelEntity pro) {
+        pro = em.merge(pro);
+        em.remove(pro);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public ProfessionnelEntity find(long id) {
+        return em.find(ProfessionnelEntity.class, id);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<ProfessionnelEntity> findAll() {
+        Query q = em.createQuery("SELECT h FROM HelloEntity h");
+        return q.getResultList();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<ProfessionnelEntity> findByName(ProfessionnelEntity pro, String nom) {
+        Query q = em.createQuery("SELECT h FROM HelloEntity h WHERE h.nom = ? ").setParameter(1, nom);
+        return q.getResultList();
+    }
+    
+}
