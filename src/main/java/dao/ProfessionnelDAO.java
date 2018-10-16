@@ -17,5 +17,5 @@ public interface ProfessionnelDAO {
     public void delete(ProfessionnelEntity c);
     public ProfessionnelEntity find(long id);
     public List<ProfessionnelEntity> findAll();
-    public List<ProfessionnelEntity> findByName(ProfessionnelEntity c, String nom);
+    public List<ProfessionnelEntity> findByName(String nom);
 }

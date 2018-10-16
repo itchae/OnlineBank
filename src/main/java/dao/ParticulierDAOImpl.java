@@ -48,14 +48,14 @@ public class ParticulierDAOImpl implements ParticulierDAO{
     @Transactional(readOnly = true)
     @Override
     public List<ParticulierEntity> findAll() {
-        Query q = em.createQuery("SELECT h FROM HelloEntity h");
+        Query q = em.createQuery("SELECT p FROM ParticulierEntity p");
         return q.getResultList();
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<ParticulierEntity> findByName(ParticulierEntity pers, String nom) {
-        Query q = em.createQuery("SELECT h FROM HelloEntity h WHERE h.nom = ? ").setParameter(1, nom);
+    public List<ParticulierEntity> findByName(String nom) {
+        Query q = em.createQuery("SELECT pers FROM ParticulierEntity p WHERE p.nom = ? ").setParameter(1, nom);
         return q.getResultList();
     }
     

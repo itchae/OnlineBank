@@ -54,8 +54,8 @@ public class ProfessionnelDAOImpl implements ProfessionnelDAO{
 
     @Transactional(readOnly = true)
     @Override
-    public List<ProfessionnelEntity> findByName(ProfessionnelEntity pro, String nom) {
-        Query q = em.createQuery("SELECT h FROM HelloEntity h WHERE h.nom = ? ").setParameter(1, nom);
+    public List<ProfessionnelEntity> findByName(String nom) {
+        Query q = em.createQuery("SELECT pro FROM ProfessionnelEntity pro WHERE pro.nom = ? ").setParameter(1, nom);
         return q.getResultList();
     }
     
