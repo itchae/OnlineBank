@@ -29,3 +29,5 @@ hs_err_pid*
 
 /nbproject/*
 build.xml
+/OnlineBank/target/
+/target/
