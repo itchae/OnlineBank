@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  *
  * @author lucille
  */
-@Service("ProfessionelService")
+@Service
 public class ProfessionelServiceImpl implements ProfessionelService{
 
     @Autowired

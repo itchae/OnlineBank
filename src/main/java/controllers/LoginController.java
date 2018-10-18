@@ -47,17 +47,16 @@ public class LoginController {
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            if(particulierService.tryConnect(login, mdp)){
+            /*if(particulierService.tryConnect(login, mdp)){
+                session.setAttribute("login", login);
+            }else{
+                return new ModelAndView("errorLogin");
+            }*/
+            if(login.equals("toto") && mdp.equals("tata")){
                 session.setAttribute("login", login);
             }else{
                 return new ModelAndView("errorLogin");
             }
-            /*if(login.equals("toto") && mdp.equals("tata")){
-                session.setAttribute("login", login);
-            }
-            else{
-                return new ModelAndView("errorLogin");
-            }*/
         }
         else{
             login = (String)session.getAttribute("login");
