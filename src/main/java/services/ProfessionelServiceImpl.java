@@ -9,11 +9,13 @@ import dao.ProfessionnelDAO;
 import dao.ProfessionnelEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author lucille
  */
+@Service("ProfessionelService")
 public class ProfessionelServiceImpl implements ProfessionelService{
 
     @Autowired

@@ -10,11 +10,13 @@ import dao.ParticulierEntity;
 import dao.ProfessionnelEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author lucille
  */
+@Service("ParticulierService")
 public class ParticulierServiceImpl implements ParticulierService{
 
     @Autowired
@@ -59,6 +61,11 @@ public class ParticulierServiceImpl implements ParticulierService{
             }
         }
         return res;
+    }
+
+    @Override
+    public String printComptes() {
+        return "ok";
     }
     
 }

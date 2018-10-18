@@ -25,5 +25,6 @@
         </li>
         <% }%>
         </ul>
+        <p>${listeComptes}</p>
     </body>
 </html>
