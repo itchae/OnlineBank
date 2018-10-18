@@ -5,10 +5,13 @@
  */
 package services;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author lucille
  */
+
 public interface ParticulierService {
 
     public String getLogin(int id);

@@ -9,15 +9,17 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author lucille
  */
+@Repository
 public class ParticulierDAOImpl implements ParticulierDAO{
 
-    @PersistenceContext(unitName="OnlineBankPU")
+    @PersistenceContext(unitName="PersonnePU")
     private EntityManager em;
     
     @Transactional

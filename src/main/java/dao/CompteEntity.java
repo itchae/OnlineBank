@@ -23,20 +23,36 @@ import javax.persistence.InheritanceType;
 public class CompteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column
+    
+    @Column (name="login")
     private String login;
-    @Column
-    private String password;
-    @Column
-    private String mail;
-    @Column
-    private String adresse;
-    @Column
-    private String tel;
+    
+    @Column (name="nom")
+    private String nom;
 
+    @Column (name="password")
+    private String password;
+    
+    @Column (name="mail")
+    private String mail;
+    
+    @Column (name="adresse")
+    private String adresse;
+    
+    @Column (name="tel")
+    private String tel;
+    
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+ 
     public String getLogin() {
         return login;
     }

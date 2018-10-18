@@ -16,11 +16,15 @@ import org.springframework.stereotype.Service;
  *
  * @author lucille
  */
-@Service("ParticulierService")
+@Service
 public class ParticulierServiceImpl implements ParticulierService{
 
     @Autowired
-    ParticulierDAO particulierDao;
+   private ParticulierDAO particulierDao;
+
+    public ParticulierDAO getParticulierDao() {
+        return particulierDao;
+    }
     
     @Override
     public String getLogin(int id) {
@@ -34,7 +38,7 @@ public class ParticulierServiceImpl implements ParticulierService{
 
     @Override
     public String getEmail(int id) {
-        return this.particulierDao.find(id).getEmail();
+        return this.particulierDao.find(id).getMail();
                 
     }
 
