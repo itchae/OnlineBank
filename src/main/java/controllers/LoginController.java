@@ -27,10 +27,15 @@ import services.ParticulierService;
 public class LoginController {
     
     @Autowired
-    private ParticulierService service;
-    
+    ParticulierService particulierService;
+
     @Autowired 
-    private ConnectService coService;
+    ConnectService coService;
+    
+    @RequestMapping(value="login", method=RequestMethod.GET)
+    public String init(){
+        return "login";
+    }
     
     @RequestMapping(value="index", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
@@ -42,7 +47,7 @@ public class LoginController {
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            if(service.tryConnect(login, mdp)){
+            if(particulierService.tryConnect(login, mdp)){
                 session.setAttribute("login", login);
             }else{
                 return new ModelAndView("errorLogin");
@@ -62,7 +67,7 @@ public class LoginController {
         return mav;
     }
     
-    @RequestMapping(value = "login", method = RequestMethod.GET)
+    /*@RequestMapping(value = "login", method = RequestMethod.GET)
     public ModelAndView initIndex(HttpServletRequest request, HttpServletResponse response) {
     ModelAndView mav = null;
     if(request.getSession(false).getAttribute("login") == null ){
@@ -71,7 +76,7 @@ public class LoginController {
         mav = new ModelAndView("listAccount");
     }
     return mav;
-  }
+  }*/
     
     @RequestMapping(value="errorLogin", method = RequestMethod.GET)
     public String errorLoginRedirect(){
