@@ -26,6 +26,7 @@ public class ParticulierDAOImpl implements ParticulierDAO{
     @Override
     public void save(ParticulierEntity pers) {
         pers = em.merge(pers);
+        em.persist(pers);
     }
 
     @Transactional

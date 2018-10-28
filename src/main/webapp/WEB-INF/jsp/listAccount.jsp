@@ -26,5 +26,8 @@
         <% }%>
         </ul>
         <p>${listeComptes}</p>
+        
+        <p>Liste des particuliers</p>
+        <p>${listePart}</p>
     </body>
 </html>

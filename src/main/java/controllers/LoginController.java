@@ -63,6 +63,9 @@ public class LoginController {
         }
         mav = new ModelAndView("listAccount");
         mav.addObject("welcome", coService.welcome(login)); 
+        //String listeParticulier = particulierService.printComptes();
+        mav.addObject("listePart", particulierService.printComptes());
+        
         return mav;
     }
     
@@ -92,6 +95,14 @@ public class LoginController {
         }
         return new ModelAndView("logout");
         
+    }
+    
+    @RequestMapping(value = "affiche", method = RequestMethod.GET)
+    protected ModelAndView affiche(){
+        ModelAndView mv = new ModelAndView("display");
+        String listeParticulier = particulierService.printComptes();
+        mv.addObject("listePart", listeParticulier);
+        return mv;
     }
 
 }

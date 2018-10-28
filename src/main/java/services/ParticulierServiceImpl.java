@@ -5,6 +5,7 @@
  */
 package services;
 
+import com.univpoitiers.fr.animalkeepermaven.dao.AnimalEntity;
 import dao.ParticulierDAO;
 import dao.ParticulierEntity;
 import dao.ProfessionnelEntity;
@@ -69,7 +70,15 @@ public class ParticulierServiceImpl implements ParticulierService{
 
     @Override
     public String printComptes() {
-        return "ok";
+        List<ParticulierEntity> particulier = this.particulierDao.findAll();
+        String result="";
+        for(int i=0;i<particulier.size();i++){
+            //result += i;
+            result += "<P>Particulier " + i +"</P>";
+            result += "<P> "+particulier.get(i).toString()+"</P>";
+        }
+        //result = "On va faire un jeu";      
+        return result;
     }
     
 }

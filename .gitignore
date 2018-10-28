@@ -31,3 +31,8 @@ hs_err_pid*
 build.xml
 /OnlineBank/target/
 /target/
+\.settings/
+
+\.project
+
+\.classpath
