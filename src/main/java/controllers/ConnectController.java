@@ -23,8 +23,8 @@ import services.ConnectService;
 @Controller
 public class ConnectController {
     
-    @Autowired
-    private ConnectService service;
+    //@Autowired
+    //private ConnectService service;
     
     @RequestMapping(value="connect", method = RequestMethod.GET)
     public String initConnect(){
@@ -41,7 +41,7 @@ public class ConnectController {
             ModelAndView error = new ModelAndView("index");
             String login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            mv.addObject("welcome", service.welcome(login)); 
+            //mv.addObject("welcome", service.welcome(login)); 
             if(login.equals("toto") && mdp.equals("tata")){
                 session = request.getSession();
                 return mv; 

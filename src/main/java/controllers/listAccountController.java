@@ -45,6 +45,7 @@ public class listAccountController {
     public ModelAndView initIndex(){
 	ModelAndView mv = new ModelAndView();
         mv.addObject("listAccount");
+        mv.addObject("listePart", part.printComptes());
         return mv; 
     }
 

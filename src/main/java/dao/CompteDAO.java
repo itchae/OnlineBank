@@ -18,4 +18,5 @@ public interface CompteDAO {
     public CompteEntity find(long id);
     public List<CompteEntity> findAll();
     public List<CompteEntity> findByName(String nom);
+    public List<CompteEntity> findByLogin(String login);
 }

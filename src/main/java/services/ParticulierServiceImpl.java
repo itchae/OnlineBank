@@ -6,6 +6,7 @@
 package services;
 
 import com.univpoitiers.fr.animalkeepermaven.dao.AnimalEntity;
+import dao.CompteDAO;
 import dao.ParticulierDAO;
 import dao.ParticulierEntity;
 import dao.ProfessionnelEntity;
@@ -22,34 +23,37 @@ public class ParticulierServiceImpl implements ParticulierService{
 
     @Autowired
    private ParticulierDAO particulierDao;
+    
+    @Autowired
+    private CompteDAO compteDao;
 
     public ParticulierDAO getParticulierDao() {
         return particulierDao;
     }
     
     @Override
-    public String getLogin(int id) {
+    public String getLogin(long id) {
         return this.particulierDao.find(id).getLogin();
     }
 
     @Override
-    public String getMdp(int id) {
+    public String getMdp(long id) {
         return this.particulierDao.find(id).getPassword();
     }
 
     @Override
-    public String getEmail(int id) {
+    public String getEmail(long id) {
         return this.particulierDao.find(id).getMail();
                 
     }
 
     @Override
-    public String getPhone(int id) {
+    public String getPhone(long id) {
         return this.particulierDao.find(id).getTel();
     }
 
     @Override
-    public String getAdresse(int id) {
+    public String getAdresse(long id) {
         return this.particulierDao.find(id).getAdresse();
     }
 

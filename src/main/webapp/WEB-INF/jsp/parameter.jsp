@@ -19,7 +19,20 @@
 	   <P> Mot de Passe : <INPUT Type=text Name=mpdchange></P>
            <P> Confirmez le mot de passe : <INPUT Type=text Name=mdpconf></P>
 	   <P> <INPUT Type=submit VALUE="OK"> </P>
-           <p>${infos}</p>
+           <p>${id}</p>
+           <p>Login : </p>
+           <p>${logingars}</p>
+           <p> Email : </p>
+           <p>${email}</p>
+           <p>Adresse</p>
+           <p>${adresse}</p>
+           <p>Phone</p>
+           <p>${phone}</p>
+           <p>Mot de passe</p>
+           <p>${pwd}</p>
+           
+           
+           
 	</FORM>
     </body>
 </html>

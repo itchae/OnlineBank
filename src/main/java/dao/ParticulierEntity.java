@@ -39,7 +39,9 @@ public class ParticulierEntity extends CompteEntity {
 
     @Override
     public String toString() {
-        return "nom : "+this.getNom()+" Prenom : "+this.getPrenom();
+        return "nom : "+this.getNom()
+                +" Prenom : "+this.getPrenom()
+                +" Email : "+this.getMail();
         //return "dao.ParticulierEntity[ super.getId()=" /*+ super.getId() + " ]"*/;
     }
     

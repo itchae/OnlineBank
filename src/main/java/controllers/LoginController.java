@@ -47,13 +47,13 @@ public class LoginController {
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            /*if(particulierService.tryConnect(login, mdp)){
+            long id = coService.connection(login, mdp);
+            if(id !=-1){
                 session.setAttribute("login", login);
-            }else{
-                return new ModelAndView("errorLogin");
-            }*/
-            if(login.equals("toto") && mdp.equals("tata")){
-                session.setAttribute("login", login);
+                session.setAttribute("id", id);
+                //Ajouter l'id du compte ?? Pour savoir si c'est un particulier ou un pro
+                //A partir du moment ou il est co il existe forcément, il faut juste savoir quel
+                //type de compte c'est et donc quel affichage on fait 
             }else{
                 return new ModelAndView("errorLogin");
             }
@@ -62,8 +62,7 @@ public class LoginController {
             login = (String)session.getAttribute("login");
         }
         mav = new ModelAndView("listAccount");
-        mav.addObject("welcome", coService.welcome(login)); 
-        //String listeParticulier = particulierService.printComptes();
+        mav.addObject("welcome", coService.welcome(login));
         mav.addObject("listePart", particulierService.printComptes());
         
         return mav;

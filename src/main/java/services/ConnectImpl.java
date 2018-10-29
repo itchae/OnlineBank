@@ -5,6 +5,11 @@
  */
 package services;
 
+import dao.CompteDAO;
+import dao.CompteEntity;
+import dao.ParticulierDAO;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +18,10 @@ import org.springframework.stereotype.Service;
  */
 @Service("ConnectService")
 public class ConnectImpl implements ConnectService{
+    
+    @Autowired
+    private CompteDAO compteDao;
+    
 
     @Override
     public String welcome(String nom) {
@@ -20,8 +29,17 @@ public class ConnectImpl implements ConnectService{
     }
     
     @Override
-    public boolean connection(String mdp, String pwd){
-        return true; 
+    public long connection(String login, String pwd){
+        List<CompteEntity> list = compteDao.findByLogin(login);
+        if(list.size()==1){
+            String pwdEntre = list.get(0).getPassword();
+            if(pwd.equals(pwdEntre)){
+                return list.get(0).getId();
+            }
+        }
+        return -1;
     }
+    
+    
     
 }

@@ -14,11 +14,11 @@ import org.springframework.stereotype.Service;
 
 public interface ParticulierService {
 
-    public String getLogin(int id);
-    public String getMdp(int id);
-    public String getEmail(int id);
-    public String getPhone(int id);
-    public String getAdresse(int id);
+    public String getLogin(long id);
+    public String getMdp(long id);
+    public String getEmail(long id);
+    public String getPhone(long id);
+    public String getAdresse(long id);
     public boolean tryConnect(String login, String pwd);
 
     public String printComptes();

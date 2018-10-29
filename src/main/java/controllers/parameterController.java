@@ -7,6 +7,7 @@ package controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,13 +24,21 @@ public class parameterController {
     @Autowired
     ParticulierService part;
     
+    //@Autowired
+    //CompteService compt;
+    
     @RequestMapping(value="parameter", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
+        long id = Integer.parseInt(request.getParameter("id"));
+        
         ModelAndView mv = new ModelAndView("parameter");
-        String infos = part.getLogin(1);
-        mv.addObject(infos);
+        String login = part.getLogin(id);
+        String email = part.getEmail(id);
+                
+        mv.addObject("email", email);
+        mv.addObject("logingars", login);
         return mv;
     }
     
@@ -37,7 +46,22 @@ public class parameterController {
     protected ModelAndView affiche(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
+        HttpSession session = request.getSession();
+        
+        long id = (Long)session.getAttribute("id");
+ 
         ModelAndView mv = new ModelAndView("parameter");
+        String login = part.getLogin(id);
+        String email = part.getEmail(id);
+        String adresse = part.getAdresse(id);
+        String phone = part.getPhone(id);
+        String mdp = part.getMdp(id);
+        request.getSession();
+        mv.addObject("email", email);
+        mv.addObject("adresse", adresse);
+        mv.addObject("phone", phone);
+        mv.addObject("pwd", mdp);
+        mv.addObject("logingars", login);
         return mv;
     }
 }
