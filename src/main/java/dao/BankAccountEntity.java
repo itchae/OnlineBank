@@ -9,8 +9,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
 /**
  *
@@ -28,9 +26,20 @@ public class BankAccountEntity implements Serializable{
     
     @Column (name = "solde")
     private double solde;
+    
+    @Column (name = "proprietaire")
+    private Long idProprietaire;
 
     public Long getId() {
         return id;
+    }
+
+    public Long getIdProprietaire() {
+        return idProprietaire;
+    }
+
+    public void setIdProprietaire(Long idProprietaire) {
+        this.idProprietaire = idProprietaire;
     }
 
     public void setId(Long id) {
