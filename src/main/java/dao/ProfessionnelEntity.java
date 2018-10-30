@@ -15,7 +15,7 @@ import javax.persistence.Entity;
 @Entity
 public class ProfessionnelEntity extends CompteEntity {
     
-    @Column (name="siret")
+    @Column (name="siret", unique=true)
     private String siret;
 
     

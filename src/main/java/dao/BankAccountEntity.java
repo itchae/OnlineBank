@@ -8,17 +8,22 @@ package dao;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author lucille
  */
+@Table(name="BankAccountEntity")
 @Entity
 public class BankAccountEntity implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
     @Column (name = "intitule")
@@ -28,18 +33,20 @@ public class BankAccountEntity implements Serializable{
     private double solde;
     
     @Column (name = "proprietaire")
-    private Long idProprietaire;
+    private Long proprietaire;
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public Long getId() {
         return id;
     }
 
     public Long getIdProprietaire() {
-        return idProprietaire;
+        return proprietaire;
     }
 
     public void setIdProprietaire(Long idProprietaire) {
-        this.idProprietaire = idProprietaire;
+        this.proprietaire = idProprietaire;
     }
 
     public void setId(Long id) {
@@ -84,7 +91,7 @@ public class BankAccountEntity implements Serializable{
 
     @Override
     public String toString() {
-        return "Id : " + id + " Intitule : "+ intitule + " Solde : "+ solde;
+        return "Id : " + id + " Intitule : "+ intitule + " Solde : "+ solde + "Proprio : "+ proprietaire;
     }
     
     

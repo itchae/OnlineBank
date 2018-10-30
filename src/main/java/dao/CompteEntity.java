@@ -25,6 +25,7 @@ public class CompteEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
     @Column (name="login")
@@ -93,6 +94,8 @@ public class CompteEntity implements Serializable {
         this.tel = tel;
     }
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public Long getId() {
         return id;
     }

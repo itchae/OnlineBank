@@ -52,7 +52,7 @@ public class BankAccountDAOImpl implements BankAccountDAO{
     @Override
     public List<BankAccountEntity> findAll(long id) {
         Query q;
-        q = em.createQuery("SELECT b FROM BankAccountEntity b WHERE b.compteId = ?").setParameter(1, id);
+        q = em.createQuery("SELECT b FROM BankAccountEntity b WHERE b.proprietaire = ?").setParameter(1, id);
         return q.getResultList();
     }
     

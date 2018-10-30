@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import services.CompteService;
 import services.ParticulierService;
 
 /**
@@ -25,27 +26,40 @@ public class listAccountController {
     @Autowired
     ParticulierService part;
     
+    @Autowired
+    CompteService ba;
+    
     @RequestMapping(value="listAccount", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
     throws Exception 
     { 
         HttpSession session  = request.getSession(false);
         ModelAndView mv = new ModelAndView();
-        String listeComptes = part.printComptes();
+        long id = (Long)session.getAttribute("id");
+        String list = ba.printAccount(id);
+        //String listeComptes;
+        //String listeComptes = part.printComptes();
+        //listeComptes = ba.printAccount((Long)session.getAttribute("id"))
+                //String listeComptes = part.printComptes();
+;
         
         if(session==null){
             mv.addObject("index");
         }else{
-            mv.addObject("listAccount", listeComptes);
+            mv.addObject("listeComptes", list);
         }
         return mv;
     }
     
     @RequestMapping(value="listAccount", method = RequestMethod.GET)
-    public ModelAndView initIndex(){
+    public ModelAndView initIndex(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        long id = (Long)session.getAttribute("id");
+        String list = ba.printAccount(id);
 	ModelAndView mv = new ModelAndView();
         mv.addObject("listAccount");
-        mv.addObject("listePart", part.printComptes());
+        mv.addObject("idwtf", id);
+        mv.addObject("listeComptes", list);
         return mv; 
     }
 

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import services.CompteService;
 import services.ConnectService;
 import services.ParticulierService;
 
@@ -32,6 +33,9 @@ public class LoginController {
     @Autowired 
     ConnectService coService;
     
+    @Autowired
+    CompteService ba;
+    
     @RequestMapping(value="login", method=RequestMethod.GET)
     public String init(){
         return "login";
@@ -44,13 +48,18 @@ public class LoginController {
         ModelAndView mav = null;
         HttpSession session = request.getSession();
         String login;
+        String list = "";
+        //String listeComptes = part.printComptes();
+;       long id = -1;
+        
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
-            long id = coService.connection(login, mdp);
+            id = coService.connection(login, mdp);
             if(id !=-1){
                 session.setAttribute("login", login);
                 session.setAttribute("id", id);
+                list = ba.printAccount(id);
                 //Ajouter l'id du compte ?? Pour savoir si c'est un particulier ou un pro
                 //A partir du moment ou il est co il existe forcément, il faut juste savoir quel
                 //type de compte c'est et donc quel affichage on fait 
@@ -64,6 +73,8 @@ public class LoginController {
         mav = new ModelAndView("listAccount");
         mav.addObject("welcome", coService.welcome(login));
         mav.addObject("listePart", particulierService.printComptes());
+        mav.addObject("listeComptes", list);
+        mav.addObject("idwtf", id);
         
         return mav;
     }

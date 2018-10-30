@@ -15,23 +15,18 @@
         <jsp:include page="navbar.jsp"/>
         <h1>Parameters</h1>
         <FORM method="POST" ACTION="parameter.htm">
-           <P> E-Mail : <INPUT Type=text Name=mail> </P>
-	   <P> Mot de Passe : <INPUT Type=text Name=mpdchange></P>
+  
+           <p>Login : ${logingars}</p>
+           <p>E-Mail : ${email}</p>
+           <P> Nouvel E-Mail : <INPUT Type=text Name=mail> </P>
+           <p>Adresse : ${adresse}</p>
+           <P> Nouvelle adresse : <INPUT Type=text Name=address> </P>
+           <p>Phone : ${phone}</p>
+           <P> Nouveau numero : <INPUT Type=text Name=phone> </P>
+           <p>Mot de passe : </p>
+           <P> Mot de Passe : <INPUT Type=text Name=mpdchange></P>
            <P> Confirmez le mot de passe : <INPUT Type=text Name=mdpconf></P>
-	   <P> <INPUT Type=submit VALUE="OK"> </P>
-           <p>${id}</p>
-           <p>Login : </p>
-           <p>${logingars}</p>
-           <p> Email : </p>
-           <p>${email}</p>
-           <p>Adresse</p>
-           <p>${adresse}</p>
-           <p>Phone</p>
-           <p>${phone}</p>
-           <p>Mot de passe</p>
-           <p>${pwd}</p>
-           
-           
+           <P> <INPUT Type=submit VALUE="OK"> </P>
            
 	</FORM>
     </body>

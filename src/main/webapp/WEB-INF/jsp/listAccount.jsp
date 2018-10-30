@@ -18,16 +18,19 @@
         <!-- Il faut rechercher combien de comptes il y a,
         créer le nombre d'input en fonction, avec les bons noms,
         service ? -->
-        <ul>
+        <!--<ul>
         <% for (int i=0; i<10; i++) { %>
         <li>
             <a href="consultAccount.htm">Compte <%= i %> </a>
         </li>
         <% }%>
+        </ul>-->
+        <p>Liste des comptes : </p>
+        <ul>
+        ${listeComptes}
         </ul>
-        <p>${listeComptes}</p>
         
-        <p>Liste des particuliers</p>
-        <p>${listePart}</p>
+        <!--<p>Liste des particuliers</p>
+        <p>${listePart}</p>-->
     </body>
 </html>

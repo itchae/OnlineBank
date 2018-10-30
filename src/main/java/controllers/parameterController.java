@@ -56,7 +56,7 @@ public class parameterController {
         String adresse = part.getAdresse(id);
         String phone = part.getPhone(id);
         String mdp = part.getMdp(id);
-        request.getSession();
+        //request.getSession();
         mv.addObject("email", email);
         mv.addObject("adresse", adresse);
         mv.addObject("phone", phone);
