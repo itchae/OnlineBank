@@ -13,31 +13,19 @@ import javax.persistence.Entity;
  * @author lucille
  */
 @Entity
-public class ParticulierEntity extends CompteEntity {
-    
+public class BanquierEntity extends CompteEntity{
     @Column (name="prenom")
     private String prenom;
-    
-    @Column (name="idBanquier")
-    private long idBanquier;
-
-    public long getIdBanquier() {
-        return idBanquier;
-    }
-
-    public void setIdBanquier(long idBanquier) {
-        this.idBanquier = idBanquier;
-    }
-
 
     public String getPrenom() {
         return prenom;
     }
 
-    public void setPrenom(String prenom){
-        this.prenom = prenom; 
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -46,12 +34,9 @@ public class ParticulierEntity extends CompteEntity {
     }
 
 
+
     @Override
     public String toString() {
-        return "nom : "+this.getNom()
-                +" Prenom : "+this.getPrenom()
-                +" Email : "+this.getMail();
-        //return "dao.ParticulierEntity[ super.getId()=" /*+ super.getId() + " ]"*/;
+        return "dao.ProfessionnelEntity[ super.getId()=" + super.getId() + " ]";
     }
-    
 }

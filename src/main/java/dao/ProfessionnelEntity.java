@@ -22,6 +22,9 @@ public class ProfessionnelEntity extends CompteEntity {
     @Column (name="type_entreprise")
     private String type_entreprise;
     
+    @Column (name="idBanquier")
+    private long idBanquier;
+    
     public String getSiret() {
         return siret;
     }

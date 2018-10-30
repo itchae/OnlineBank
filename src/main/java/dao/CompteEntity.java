@@ -94,8 +94,6 @@ public class CompteEntity implements Serializable {
         this.tel = tel;
     }
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     public Long getId() {
         return id;
     }
