@@ -50,9 +50,9 @@ public class BankAccountDAOImpl implements BankAccountDAO{
 
     @Transactional(readOnly = true)
     @Override
-    public List<BankAccountEntity> findAll(long id) {
+    public List<BankAccountEntity> findAll() {
         Query q;
-        q = em.createQuery("SELECT b FROM BankAccountEntity b WHERE b.proprietaire = ?").setParameter(1, id);
+        q = em.createQuery("SELECT b FROM BankAccountEntity b");
         return q.getResultList();
     }
     

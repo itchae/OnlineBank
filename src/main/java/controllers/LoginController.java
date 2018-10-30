@@ -37,8 +37,11 @@ public class LoginController {
     CompteService ba;
     
     @RequestMapping(value="login", method=RequestMethod.GET)
-    public String init(){
-        return "login";
+    public ModelAndView init(){
+        String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
+        ModelAndView mav = new ModelAndView("login");
+        mav.addObject("res", res);
+        return mav;
     }
     
     @RequestMapping(value="index", method = RequestMethod.POST)

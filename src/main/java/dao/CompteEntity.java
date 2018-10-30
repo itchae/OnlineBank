@@ -40,7 +40,7 @@ public class CompteEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     
-    @Column (name="login")
+    @Column (name="login", unique=true)
     private String login;
     
     @Column (name="nom")

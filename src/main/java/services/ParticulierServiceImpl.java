@@ -32,9 +32,10 @@ public class ParticulierServiceImpl implements ParticulierService{
     }
     
     @Override
-    public void remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, long idBanquier){
+    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, long idBanquier){
         ParticulierEntity p = new ParticulierEntity(prenom, idBanquier, login, nom, mdp, email, phone, adress);
         particulierDao.save(p);
+        return "C'est save ";
     }
     
     @Override

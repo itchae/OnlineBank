@@ -20,9 +20,10 @@ public class CompteImpl implements CompteService{
     @Autowired
     private BankAccountDAO bankAccountDao;
     
+    
     @Override
     public String printAccount(long id) {
-        List<BankAccountEntity> bankAccount = this.bankAccountDao.findAll(id);
+        List<BankAccountEntity> bankAccount = this.bankAccountDao.findAll();
         String result="";
         for(int i=0; i<bankAccount.size();i++){
             //result +="<p>"+i+"</p>";
@@ -39,6 +40,18 @@ public class CompteImpl implements CompteService{
     @Override
     public String getSolde(long id) {
         return this.getSolde(id);
+    }
+
+    @Override
+    public void remplir(String intitule, double solde) {
+        BankAccountEntity baEntity = new BankAccountEntity(intitule, solde);
+        bankAccountDao.save(baEntity);
+        
+    }
+
+    @Override
+    public void lier(long idtitu, long idcompte) {
+        //ListeUBEntity l = new ListeUBEntity(0,0);
     }
     
 }

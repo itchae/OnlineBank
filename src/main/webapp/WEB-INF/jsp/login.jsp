@@ -16,6 +16,7 @@
 	   <P> Entrez votre mot de passe : <INPUT Type=text Name=mdp></P>
 	   <P> <INPUT Type=submit VALUE="OK"> </P>
 	</FORM>
+        <p>${res}</p>
     </body>
 </html>
 

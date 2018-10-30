@@ -16,5 +16,5 @@ public interface BankAccountDAO {
     public void update(BankAccountEntity b);
     public void delete(BankAccountEntity b);
     public BankAccountEntity find(long id);
-    public List<BankAccountEntity> findAll(long id);
+    public List<BankAccountEntity> findAll();
 }

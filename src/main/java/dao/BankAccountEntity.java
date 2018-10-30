@@ -33,6 +33,16 @@ public class BankAccountEntity implements Serializable{
     @Column (name = "solde")
     private double solde;
 
+    public BankAccountEntity() {
+    }
+
+    public BankAccountEntity(String intitule, double solde) {
+        this.intitule = intitule;
+        this.solde = solde;
+    }
+
+    
+    
     public Long getId() {
         return id;
     }

@@ -13,4 +13,6 @@ public interface CompteService {
     public String getIntitule(long id);
     public String getSolde(long id);
     public String printAccount(long id);
+    public void remplir(String intitule, double solde);
+    public void lier(long idtitu, long idcompte);
 }
