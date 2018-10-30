@@ -17,10 +17,10 @@ import javax.persistence.Id;
 public class ListVirEntity implements Serializable {
     
     @Id
-    private String idCompte;
+    private long idCompte;
     
     @Id
-    private String idVir;
+    private long idVir;
 
     public long getIdCompte() {
         return idCompte;

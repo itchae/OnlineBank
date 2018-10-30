@@ -7,6 +7,7 @@ package dao;
 
 import java.util.List;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -15,31 +16,37 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class BanquierDAOImpl implements BanquierDAO {
 
+    @Transactional
     @Override
     public void save(BanquierEntity c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Transactional
     @Override
     public void update(BanquierEntity c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Transactional
     @Override
     public void delete(BanquierEntity c) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Transactional
     @Override
     public BanquierEntity find(long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Transactional
     @Override
     public List<BanquierEntity> findAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Transactional
     @Override
     public List<BanquierEntity> findByName(String nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -21,6 +21,17 @@ public class ParticulierEntity extends CompteEntity {
     @Column (name="idBanquier")
     private long idBanquier;
 
+    public ParticulierEntity(String prenom, long idBanquier, String login, String nom, String password, String mail, String adresse, String tel) {
+        super(login, nom, password, mail, adresse, tel);
+        this.prenom = prenom;
+        this.idBanquier = idBanquier;
+    }
+
+    public ParticulierEntity() {
+    }
+
+    
+
     public long getIdBanquier() {
         return idBanquier;
     }
