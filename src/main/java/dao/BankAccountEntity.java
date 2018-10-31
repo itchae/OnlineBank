@@ -6,11 +6,14 @@
 package dao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,6 +35,14 @@ public class BankAccountEntity implements Serializable{
     
     @Column (name = "solde")
     private double solde;
+    
+    @ManyToMany(mappedBy = "ba")
+    List<CompteEntity> user = new ArrayList<CompteEntity>(); 
+    
+    public void addUser(String login, String nom, String password, String mail, String adresse, String tel){
+        CompteEntity c = new CompteEntity(login, nom, password, mail, adresse, tel);
+        this.user.add(c);
+    }
 
     public BankAccountEntity() {
     }

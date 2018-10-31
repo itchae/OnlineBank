@@ -6,6 +6,8 @@
 package dao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -57,6 +62,20 @@ public class CompteEntity implements Serializable {
     
     @Column (name="tel")
     private String tel;
+    
+    @JoinTable(
+    name="ListeBA_User",
+    joinColumns=@JoinColumn(name="id_user"),
+    inverseJoinColumns=@JoinColumn(name="id_compte")
+    )
+    @ManyToMany
+    private List<BankAccountEntity> ba = new ArrayList<BankAccountEntity>(); 
+    
+    
+    public void addBA(String intitule, double solde){
+        BankAccountEntity newBA = new BankAccountEntity(intitule, solde);
+        ba.add(newBA);
+    }
     
     public String getNom() {
         return nom;
