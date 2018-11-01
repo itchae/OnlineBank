@@ -40,13 +40,18 @@ public class InitImpl implements InitService{
     @Override
     public void InitService() {
         CompteEntity c = new ParticulierEntity("Charles", 0, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
+        CompteEntity c2 = new ParticulierEntity("Yves", 0, "toto", "Apabien", "tata", "Lemail", "0605040201", "Adresse");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
+        BankAccountEntity ba3 = new BankAccountEntity("Compte3", 300);
+        c2.addBA(ba3);
+        c2.addBA(ba2);
         BanquierEntity b = new BanquierEntity("tom", "toto", "bonnion", "tata", "tom@bonnion.fr", "impasse du diable", "0606060606");
         bank.save(b);
         c.addBA(ba);
         c.addBA(ba2);
         p.save(c);
+        p.save(c2);
     }
 
     @Override

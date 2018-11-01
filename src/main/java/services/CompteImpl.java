@@ -7,6 +7,7 @@ package services;
 
 import dao.BankAccountDAO;
 import dao.BankAccountEntity;
+import dao.CompteEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,12 @@ public class CompteImpl implements CompteService{
         List<BankAccountEntity> bankAccount = this.bankAccountDao.findAll();
         String result="";
         for(int i=0; i<bankAccount.size();i++){
-            //result +="<p>"+i+"</p>";
-            result +="<li>"+bankAccount.get(i).toString()+"</li>";
+            List<CompteEntity> comptes = bankAccount.get(i).getUser();
+            for(int j=0; j<comptes.size(); j++){
+                if(comptes.get(j).getId() == id){
+                    result +="<li><a href=#>"+bankAccount.get(i).toString()+"</a></li>";
+                }
+            }
         }
         return result;
     }
