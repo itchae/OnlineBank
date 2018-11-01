@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import services.CompteService;
 import services.ConnectService;
+import services.InitService;
 import services.ParticulierService;
 
 /**
@@ -34,13 +35,17 @@ public class LoginController {
     ConnectService coService;
     
     @Autowired
+    InitService init;
+    
+    @Autowired
     CompteService ba;
     
     @RequestMapping(value="login", method=RequestMethod.GET)
     public ModelAndView init(){
-        String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
+        init.InitService();
+        //String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
         ModelAndView mav = new ModelAndView("login");
-        mav.addObject("res", res);
+        //mav.addObject("res", res);
         return mav;
     }
     

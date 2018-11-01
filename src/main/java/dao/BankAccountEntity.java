@@ -38,9 +38,17 @@ public class BankAccountEntity implements Serializable{
     
     @ManyToMany(mappedBy = "ba")
     List<CompteEntity> user = new ArrayList<CompteEntity>(); 
+
+    public List<CompteEntity> getUser() {
+        return user;
+    }
     
     public void addUser(String login, String nom, String password, String mail, String adresse, String tel){
         CompteEntity c = new CompteEntity(login, nom, password, mail, adresse, tel);
+        this.user.add(c);
+    }
+    
+    public void addUser(CompteEntity c){
         this.user.add(c);
     }
 

@@ -6,13 +6,18 @@
 package services;
 
 import dao.BankAccountDAO;
+import dao.BankAccountEntity;
+import dao.CompteEntity;
 import dao.ParticulierDAO;
+import dao.ParticulierEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author lucille
  */
+@Service
 public class InitImpl implements InitService{
     boolean isAdded;
     
@@ -28,7 +33,12 @@ public class InitImpl implements InitService{
     
     @Override
     public void InitService() {
-        this.isAdded=false; 
+        CompteEntity c = new ParticulierEntity("Charles", 0, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
+        BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
+        BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
+        c.addBA(ba);
+        c.addBA(ba2);
+        p.save(c);
     }
 
     @Override

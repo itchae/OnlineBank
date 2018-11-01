@@ -49,9 +49,5 @@ public class CompteImpl implements CompteService{
         
     }
 
-    @Override
-    public void lier(long idtitu, long idcompte) {
-        //ListeUBEntity l = new ListeUBEntity(0,0);
-    }
     
 }

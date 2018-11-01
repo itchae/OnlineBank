@@ -12,10 +12,11 @@ import java.util.List;
  * @author lucille
  */
 public interface ParticulierDAO {
-    public void save(ParticulierEntity h);
+    public void save(CompteEntity h);
     public void update(ParticulierEntity h);
     public void delete(ParticulierEntity h);
     public ParticulierEntity find(long id);
     public List<ParticulierEntity> findAll();
     public List<ParticulierEntity> findByName(String nom);
+    public List<CompteEntity> findByLogin(String login);
 }

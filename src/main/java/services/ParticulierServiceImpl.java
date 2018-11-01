@@ -6,7 +6,10 @@
 package services;
 
 import com.univpoitiers.fr.animalkeepermaven.dao.AnimalEntity;
+import dao.BankAccountDAO;
+import dao.BankAccountEntity;
 import dao.CompteDAO;
+import dao.CompteEntity;
 import dao.ParticulierDAO;
 import dao.ParticulierEntity;
 import dao.ProfessionnelEntity;
@@ -26,6 +29,9 @@ public class ParticulierServiceImpl implements ParticulierService{
     
     @Autowired
     private CompteDAO compteDao;
+    
+    @Autowired
+    private BankAccountDAO baDao; 
 
     public ParticulierDAO getParticulierDao() {
         return particulierDao;
@@ -33,8 +39,18 @@ public class ParticulierServiceImpl implements ParticulierService{
     
     @Override
     public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, long idBanquier){
-        ParticulierEntity p = new ParticulierEntity(prenom, idBanquier, login, nom, mdp, email, phone, adress);
+        CompteEntity p = new ParticulierEntity(prenom, idBanquier, login, nom, mdp, email, phone, adress);
+        BankAccountEntity ba = new BankAccountEntity("Coucou", 1000);
+        BankAccountEntity ba2 = new BankAccountEntity("Hello", 200);
+        //baDao.save(ba);
+        //baDao.save(ba2);
+        //ba.addUser(p);
+        p.addBA(ba);
+        //ba2.addUser(p);
+        p.addBA(ba2);
         particulierDao.save(p);
+        //baDao.save(ba);
+        //baDao.save(ba2);
         return "C'est save ";
     }
     

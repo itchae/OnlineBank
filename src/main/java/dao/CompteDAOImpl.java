@@ -25,8 +25,11 @@ public class CompteDAOImpl implements CompteDAO{
     @Transactional
     @Override
     public void save(CompteEntity comp) {
-        comp = em.merge(comp);
-        em.persist(comp);
+        //if(this.findByLogin(comp.getLogin()).size()<1){
+            comp = em.merge(comp);
+            em.persist(comp);
+        //}
+        
     }
 
     @Transactional

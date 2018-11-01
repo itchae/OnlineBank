@@ -24,9 +24,11 @@ public class ParticulierDAOImpl implements ParticulierDAO{
     
     @Transactional
     @Override
-    public void save(ParticulierEntity pers) {
-        pers = em.merge(pers);
-        em.persist(pers);
+    public void save(CompteEntity pers) {
+        //if(findByLogin(pers.getLogin()).size()<1){
+            pers = em.merge(pers);
+            em.persist(pers);
+        //}
     }
 
     @Transactional
@@ -62,4 +64,13 @@ public class ParticulierDAOImpl implements ParticulierDAO{
         return q.getResultList();
     }
     
+    @Transactional(readOnly = true)
+    @Override
+    public List<CompteEntity> findByLogin(String login) {
+        Query q;
+        q = em.createQuery("SELECT pers FROM CompteEntity p WHERE p.login = ? ").setParameter(1, login);
+        return q.getResultList();
+        //return null; 
+    }
+  
 }

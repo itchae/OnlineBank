@@ -8,8 +8,6 @@
     <class>dao.ParticulierEntity</class>
     <class>dao.BankAccountEntity</class>
     <class>dao.BanquierEntity</class>
-    <class>dao.ListVirEntity</class>
-    <class>dao.ListeUBEntity</class>
     <class>dao.VirementEntity</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <validation-mode>NONE</validation-mode>
@@ -17,6 +15,7 @@
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+      
     </properties>
   </persistence-unit>
 </persistence>

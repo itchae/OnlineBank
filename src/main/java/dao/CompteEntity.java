@@ -8,6 +8,7 @@ package dao;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  *
@@ -25,6 +28,7 @@ import javax.persistence.ManyToMany;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Table(uniqueConstraints = {@UniqueConstraint(name = "usr_login", columnNames = { "login" }) })
 public class CompteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -68,13 +72,12 @@ public class CompteEntity implements Serializable {
     joinColumns=@JoinColumn(name="id_user"),
     inverseJoinColumns=@JoinColumn(name="id_compte")
     )
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.MERGE)
     private List<BankAccountEntity> ba = new ArrayList<BankAccountEntity>(); 
     
-    
-    public void addBA(String intitule, double solde){
-        BankAccountEntity newBA = new BankAccountEntity(intitule, solde);
-        ba.add(newBA);
+    public void addBA(BankAccountEntity newba){
+        this.ba.add(newba);
+        newba.getUser().add(this);
     }
     
     public String getNom() {
