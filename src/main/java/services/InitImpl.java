@@ -7,6 +7,8 @@ package services;
 
 import dao.BankAccountDAO;
 import dao.BankAccountEntity;
+import dao.BanquierDAO;
+import dao.BanquierEntity;
 import dao.CompteEntity;
 import dao.ParticulierDAO;
 import dao.ParticulierEntity;
@@ -25,7 +27,10 @@ public class InitImpl implements InitService{
     ParticulierDAO p;
     
     @Autowired
-    BankAccountDAO b; 
+    BankAccountDAO b;
+    
+    @Autowired
+    BanquierDAO bank;
     
     ParticulierService ps;
     CompteService c;
@@ -37,6 +42,8 @@ public class InitImpl implements InitService{
         CompteEntity c = new ParticulierEntity("Charles", 0, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
+        BanquierEntity b = new BanquierEntity("tom", "toto", "bonnion", "tata", "tom@bonnion.fr", "impasse du diable", "0606060606");
+        bank.save(b);
         c.addBA(ba);
         c.addBA(ba2);
         p.save(c);

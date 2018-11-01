@@ -47,12 +47,9 @@ public class BanquierServiceImpl implements BanquierService {
 
     @Override
     public boolean addBanquier(String nom, String prenom, String login, String mdp, String email, String phone, String adresse) {
-        boolean test = false;
         BanquierEntity p = new BanquierEntity(prenom, login, nom, mdp, email, phone, adresse);
         banquierDao.save(p);
-        test = true;
-        System.out.println(test);
-        return test;
+        return true;
     }
 
     

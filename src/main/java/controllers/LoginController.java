@@ -46,8 +46,7 @@ public class LoginController {
     
     @RequestMapping(value="login", method=RequestMethod.GET)
     public ModelAndView init(){
-        String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
-        bq.addBanquier("Neymar", "Jean", "jneymar", "tata", "jneymar@vraimentmarrre.fr", "0669696969", "2 rue de la guillotine");
+        //bq.addBanquier("Neymar", "Jean", "jneymar", "tata", "jneymar@vraimentmarrre.fr", "0669696969", "2 rue de la guillotine");
         init.InitService();
         //String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
         ModelAndView mav = new ModelAndView("login");
