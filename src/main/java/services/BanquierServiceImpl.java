@@ -19,7 +19,11 @@ public class BanquierServiceImpl implements BanquierService {
 
     @Autowired
     BanquierDAO banquierDao; 
-    
+
+    public BanquierDAO getBanquierDao() {
+        return banquierDao;
+    }
+        
     @Override
     public String getLogin(long id) {
         return banquierDao.find(id).getLogin();

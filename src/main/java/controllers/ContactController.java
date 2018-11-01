@@ -30,5 +30,21 @@ import services.ParticulierService;
 
 @Controller
 public class ContactController {
+    @Autowired
+    ParticulierService ps;
     
+    @Autowired
+    BanquierService bs;
+    
+    @RequestMapping(value="contact", method=RequestMethod.GET)
+    public ModelAndView init(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        long id = (Long)session.getAttribute("id");
+        String mail = bs.getEmail(ps.getBanquier(id));
+        String tel = bs.getPhone(ps.getBanquier(id));
+        ModelAndView mav = new ModelAndView("contact");
+        mav.addObject("mail", mail);
+        mav.addObject("tel", tel);
+        return mav;
+    }
 }

@@ -26,10 +26,13 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="nav-link" href="parameter.htm"><i class="fas fa-cog"></i>Paramètre du compte</a>
+          <a class="nav-link" href="contact.htm"><i class="fas fa-phone"></i> Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="logout.htm"><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
+          <a class="nav-link" href="parameter.htm"><i class="fas fa-cog"></i> Paramètre du compte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.htm"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
         </li>
       </ul>
     

@@ -19,6 +19,7 @@ public interface ParticulierService {
     public String getEmail(long id);
     public String getPhone(long id);
     public String getAdresse(long id);
+    public long getBanquier(long id);
     public boolean tryConnect(String login, String pwd);
     public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, long idBanquier);
     public String printComptes();

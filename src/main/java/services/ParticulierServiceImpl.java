@@ -105,5 +105,10 @@ public class ParticulierServiceImpl implements ParticulierService{
         //result = "On va faire un jeu";      
         return result;
     }
+
+    @Override
+    public long getBanquier(long id) {
+        return this.particulierDao.find(id).getIdBanquier();
+    }
     
 }

@@ -39,7 +39,7 @@ public class InitImpl implements InitService{
     
     @Override
     public void InitService() {
-        CompteEntity c = new ParticulierEntity("Charles", 0, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
+        CompteEntity c = new ParticulierEntity("Charles", 1, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
         BanquierEntity b = new BanquierEntity("tom", "toto", "bonnion", "tata", "tom@bonnion.fr", "impasse du diable", "0606060606");
