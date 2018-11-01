@@ -23,7 +23,8 @@ public class InitImpl implements InitService{
     BankAccountDAO b; 
     
     ParticulierService ps; 
-    CompteService c; 
+    CompteService c;
+    BanquierService bq;
     
     
     @Override
@@ -34,7 +35,7 @@ public class InitImpl implements InitService{
     @Override
     public void remplissage() {
         if(!this.isAdded){
-            ps.remplirdb("Jean", "René", "toto", "tata", "toto@tata.jean", "0606060606", "1 rue guillotine", 0);
+            ps.remplirdb("Jean", "René", "toto", "tata", "toto@tata.jean", "0606060606", "1 rue guillotine", 1);
             c.remplir("Lecompte", 300);
             this.isAdded = true; 
         }

@@ -22,30 +22,7 @@ public class ProfessionelServiceImpl implements ProfessionelService{
     ProfessionnelDAO proDao; 
     
     
-    @Override
-    public String getLogin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getMdp(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getEmail(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getPhone(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getAdresse(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public boolean tryConnect(String login, String pwd) {
@@ -60,6 +37,31 @@ public class ProfessionelServiceImpl implements ProfessionelService{
             }
         }
         return res;
+    }
+
+    @Override
+    public String getLogin(long id) {
+        return proDao.find(id).getLogin();
+    }
+
+    @Override
+    public String getMdp(long id) {
+        return proDao.find(id).getPassword();
+    }
+
+    @Override
+    public String getEmail(long id) {
+        return proDao.find(id).getMail();
+    }
+
+    @Override
+    public String getPhone(long id) {
+        return proDao.find(id).getTel();
+    }
+
+    @Override
+    public String getAdresse(long id) {
+        return proDao.find(id).getAdresse();
     }
     
 }

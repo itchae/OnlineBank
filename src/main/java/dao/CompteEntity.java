@@ -18,12 +18,18 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  *
  * @author tbonnion
  */
 @Entity
+@Table(
+        name="COMPTEENTITY", 
+        uniqueConstraints=
+            @UniqueConstraint(columnNames={"LOGIN"}))
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class CompteEntity implements Serializable {
 

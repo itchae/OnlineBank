@@ -5,11 +5,9 @@
  */
 package services;
 
-import com.univpoitiers.fr.animalkeepermaven.dao.AnimalEntity;
 import dao.CompteDAO;
 import dao.ParticulierDAO;
 import dao.ParticulierEntity;
-import dao.ProfessionnelEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
