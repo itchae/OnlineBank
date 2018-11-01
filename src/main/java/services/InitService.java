@@ -11,5 +11,4 @@ package services;
  */
 public interface InitService {
     public void InitService();
-    public void remplissage();
 }
