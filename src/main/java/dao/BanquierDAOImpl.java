@@ -6,6 +6,9 @@
 package dao;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,41 +18,48 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 public class BanquierDAOImpl implements BanquierDAO {
-
+    
+    @PersistenceContext(unitName="PersonnePU")
+    private EntityManager em;
+    
     @Transactional
     @Override
-    public void save(BanquierEntity c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void save(BanquierEntity b) {
+        b = em.merge(b);
+        em.persist(b);
     }
 
     @Transactional
     @Override
-    public void update(BanquierEntity c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(BanquierEntity b) {
+        em.merge(b);
     }
 
     @Transactional
     @Override
-    public void delete(BanquierEntity c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(BanquierEntity b) {
+        b = em.merge(b);
+        em.remove(b);
     }
 
     @Transactional
     @Override
     public BanquierEntity find(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return em.find(BanquierEntity.class, id);
     }
 
     @Transactional
     @Override
     public List<BanquierEntity> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query q = em.createQuery("SELECT b FROM BanquierEntity b");
+        return q.getResultList();
     }
 
-    @Transactional
+    @Transactional(readOnly=true)
     @Override
     public List<BanquierEntity> findByName(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Query q = em.createQuery("SELECT b FROM CompteEntity b WHERE b.login = ? ").setParameter(1, nom);
+        return q.getResultList();
     }
     
 }

@@ -27,6 +27,10 @@ import javax.persistence.UniqueConstraint;
  * @author tbonnion
  */
 @Entity
+@Table(
+        name="COMPTEENTITY", 
+        uniqueConstraints=
+            @UniqueConstraint(columnNames={"LOGIN"}))
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(uniqueConstraints = {@UniqueConstraint(name = "usr_login", columnNames = { "login" }) })
 public class CompteEntity implements Serializable {

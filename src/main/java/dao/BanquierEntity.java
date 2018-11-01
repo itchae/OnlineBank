@@ -24,6 +24,11 @@ public class BanquierEntity extends CompteEntity{
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+    
+    public BanquierEntity(String prenom, String login, String nom, String password, String mail, String adresse, String tel){
+        super(login, nom, password, mail, adresse, tel);
+        this.prenom = prenom;
+    }
 
     
     @Override

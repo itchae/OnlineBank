@@ -7,14 +7,13 @@ package services;
 
 /**
  *
- * @author lucille
+ * @author APO
  */
-public interface ProfessionelService {
+public interface BanquierService {
+    public void addBanquier(String nom, String prenom, String login, String mdp, String email, String phone, String adresse);
     public String getLogin(long id);
     public String getMdp(long id);
     public String getEmail(long id);
     public String getPhone(long id);
     public String getAdresse(long id);
-    public boolean tryConnect(String login, String pwd);
-    
 }
