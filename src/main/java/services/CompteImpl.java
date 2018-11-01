@@ -27,12 +27,14 @@ public class CompteImpl implements CompteService{
         List<BankAccountEntity> bankAccount = this.bankAccountDao.findAll();
         String result="";
         for(int i=0; i<bankAccount.size();i++){
-            List<CompteEntity> comptes = bankAccount.get(i).getUser();
-            for(int j=0; j<comptes.size(); j++){
-                if(comptes.get(j).getId() == id){
-                    result +="<li><a href=#>"+bankAccount.get(i).toString()+"</a></li>";
-                }
-            }
+           result += "<p>"+i+"</p>";
+            //List<CompteEntity> comptes = bankAccount.get(i).getUser();
+            //for(int j=0; j<comptes.size(); j++){
+                //result += "<p>"+j+"</p>";
+                //if(comptes.get(j).getId() == id){
+                    //result +="<li><a href=#>"+bankAccount.get(i).toString()+"</a></li>";
+                //}
+            //}
         }
         return result;
     }
