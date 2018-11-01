@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,8 +28,12 @@ import javax.persistence.UniqueConstraint;
  * @author tbonnion
  */
 @Entity
+@Table(
+        name="COMPTEENTITY", 
+        uniqueConstraints=
+            @UniqueConstraint(columnNames={"login"}))
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@Table(uniqueConstraints = {@UniqueConstraint(name = "usr_login", columnNames = { "login" }) })
+//@Table(uniqueConstraints = {@UniqueConstraint(name = "usr_login", columnNames = { "login" }) })
 public class CompteEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -72,8 +77,18 @@ public class CompteEntity implements Serializable {
     joinColumns=@JoinColumn(name="id_user"),
     inverseJoinColumns=@JoinColumn(name="id_compte")
     )
-    @ManyToMany(cascade=CascadeType.MERGE)
+    @ManyToMany(cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<BankAccountEntity> ba = new ArrayList<BankAccountEntity>(); 
+
+    public List<BankAccountEntity> getBa() {
+        return ba;
+    }
+
+    public void setBa(List<BankAccountEntity> ba) {
+        this.ba = ba;
+    }
+    
+    
     
     public void addBA(BankAccountEntity newba){
         this.ba.add(newba);

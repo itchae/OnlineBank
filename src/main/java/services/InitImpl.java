@@ -42,20 +42,17 @@ public class InitImpl implements InitService{
         CompteEntity c = new ParticulierEntity("Charles", 1, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
-        BanquierEntity b = new BanquierEntity("tom", "toto", "bonnion", "tata", "tom@bonnion.fr", "impasse du diable", "0606060606");
-        bank.save(b);
+        BankAccountEntity ba3 = new BankAccountEntity("Compte3", 300);
+        
         c.addBA(ba);
         c.addBA(ba2);
+        
+        c2.addBA(ba3);
+        c2.addBA(ba2);
+        
+        bank.save(b);
         p.save(c);
-    }
-
-    @Override
-    public void remplissage() {
-        if(!this.isAdded){
-            ps.remplirdb("Jean", "René", "toto", "tata", "toto@tata.jean", "0606060606", "1 rue guillotine", 1);
-            c.remplir("Lecompte", 300);
-            this.isAdded = true; 
-        }
+        p.save(c2);
     }
     
 }
