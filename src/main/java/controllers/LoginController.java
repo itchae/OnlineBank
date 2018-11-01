@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import services.BanquierService;
 import services.CompteService;
 import services.ConnectService;
 import services.InitService;
@@ -40,8 +41,13 @@ public class LoginController {
     @Autowired
     CompteService ba;
     
+    @Autowired
+    BanquierService bq;
+    
     @RequestMapping(value="login", method=RequestMethod.GET)
     public ModelAndView init(){
+        String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
+        bq.addBanquier("Neymar", "Jean", "jneymar", "tata", "jneymar@vraimentmarrre.fr", "0669696969", "2 rue de la guillotine");
         init.InitService();
         //String res = particulierService.remplirdb("Jean", "Hemard", "toto", "tata", "email", "0606060606", "geuh", 0);
         ModelAndView mav = new ModelAndView("login");

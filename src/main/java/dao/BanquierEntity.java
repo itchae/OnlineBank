@@ -7,12 +7,17 @@ package dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  *
  * @author lucille
  */
 @Entity
+@Table(
+        uniqueConstraints=
+            @UniqueConstraint(columnNames={"LOGIN"}))
 public class BanquierEntity extends CompteEntity{
     @Column (name="prenom")
     private String prenom;
@@ -23,6 +28,9 @@ public class BanquierEntity extends CompteEntity{
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+    public BanquierEntity(){
+        
     }
     
     public BanquierEntity(String prenom, String login, String nom, String password, String mail, String adresse, String tel){

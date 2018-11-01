@@ -10,7 +10,7 @@ package services;
  * @author APO
  */
 public interface BanquierService {
-    public void addBanquier(String nom, String prenom, String login, String mdp, String email, String phone, String adresse);
+    public boolean addBanquier(String nom, String prenom, String login, String mdp, String email, String phone, String adresse);
     public String getLogin(long id);
     public String getMdp(long id);
     public String getEmail(long id);

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class InitImpl implements InitService{
-    boolean isAdded;
+    boolean isAdded = false;
     
     @Autowired
     ParticulierDAO p;
@@ -27,7 +27,7 @@ public class InitImpl implements InitService{
     @Autowired
     BankAccountDAO b; 
     
-    ParticulierService ps; 
+    ParticulierService ps;
     CompteService c;
     BanquierService bq;
     
