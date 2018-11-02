@@ -15,6 +15,7 @@
         <jsp:include page="navbar.jsp"/>
         <div class="container">
         <p>${welcome}</p>
+        <p>${sessionScope.role}</p>
         <h1>Liste des comptes</h1>
         <!-- Il faut rechercher combien de comptes il y a,
         créer le nombre d'input en fonction, avec les bons noms,

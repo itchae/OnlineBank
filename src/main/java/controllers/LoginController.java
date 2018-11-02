@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import dao.CompteEntity;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -60,15 +61,18 @@ public class LoginController {
         String login;
         String list = "";
         //String listeComptes = part.printComptes();
-;       long id = -1;
+        long id = -1;
         
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
+            
             id = coService.connection(login, mdp);
             if(id !=-1){
                 session.setAttribute("login", login);
                 session.setAttribute("id", id);
+                String res = ba.compteRole(id);
+                session.setAttribute("role", res); //ajout du role de l'utilisateur loggé
                 list = ba.printAccount(id);
                 //Ajouter l'id du compte ?? Pour savoir si c'est un particulier ou un pro
                 //A partir du moment ou il est co il existe forcément, il faut juste savoir quel
@@ -81,6 +85,7 @@ public class LoginController {
             login = (String)session.getAttribute("login");
         }
         mav = new ModelAndView("listAccount");
+        
         mav.addObject("welcome", coService.welcome(login));
         mav.addObject("listePart", particulierService.printComptes());
         mav.addObject("listeComptes", list);

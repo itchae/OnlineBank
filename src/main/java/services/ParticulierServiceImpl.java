@@ -110,5 +110,33 @@ public class ParticulierServiceImpl implements ParticulierService{
     public long getBanquier(long id) {
         return this.particulierDao.find(id).getIdBanquier();
     }
+
+    @Override
+    public void setMdp(long id,String value) {
+        ParticulierEntity p = this.particulierDao.find(id);
+        p.setPassword(value);
+        this.particulierDao.update(p);
+    }
+
+    @Override
+    public void setEmail(long id,String value) {
+        ParticulierEntity p = this.particulierDao.find(id);
+        p.setMail(value);
+        this.particulierDao.update(p);
+    }
+
+    @Override
+    public void setAdresse(long id,String value) {
+        ParticulierEntity p = this.particulierDao.find(id);
+        p.setAdresse(value);
+        this.particulierDao.update(p);
+    }
+
+    @Override
+    public void setPhone(long id,String value) {
+        ParticulierEntity p = this.particulierDao.find(id);
+        p.setTel(value);
+        this.particulierDao.update(p);
+    }
     
 }

@@ -17,7 +17,7 @@
                 <FORM method="POST" ACTION="index.htm">
                    <P> Entrez votre login : <INPUT Type=text Name=login> </P>
                    <P> Entrez votre mot de passe : <INPUT Type=text Name=mdp></P>
-                   <P> <INPUT Type=submit VALUE="OK"> </P>
+                   <P> <input class="btn btn-primary" type="submit" value="Log In"> </P>
                 </FORM>
             </div>
         </div>

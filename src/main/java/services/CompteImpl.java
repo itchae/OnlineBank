@@ -10,6 +10,8 @@ import dao.BankAccountEntity;
 import dao.CompteDAO;
 import dao.CompteEntity;
 import dao.ParticulierEntity;
+import dao.ProfessionnelEntity;
+import dao.BanquierEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,6 +65,20 @@ public class CompteImpl implements CompteService{
         BankAccountEntity baEntity = new BankAccountEntity(intitule, solde);
         bankAccountDao.save(baEntity);
         
+    }
+
+    @Override
+    public String compteRole(long id) {
+        if (this.c.find(id) instanceof ParticulierEntity){
+            return "par";
+        }
+        if (this.c.find(id) instanceof ProfessionnelEntity){
+            return "pro";
+        }
+        if (this.c.find(id) instanceof BanquierEntity){
+            return "banq";
+        }
+        return "err";
     }
 
     
