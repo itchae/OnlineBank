@@ -20,7 +20,9 @@
             <FORM method="POST" ACTION="parameter.htm">
                 
                <p>Login : ${logingars}</p>
-               <c:set var="role"  scope="session" value="${res}"/>
+               <p>${sessionScope.role}</p>
+               <h2>ROLEEEE!!!</h2>
+               <p>${sessionScope.role}</p>
                <c:if test= "${role == 'par'}">
                <p>E-Mail : ${email}</p>
                <P> Nouvel E-Mail : <INPUT Type=text Name=mail> </P>

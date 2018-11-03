@@ -45,11 +45,16 @@ public class LoginController {
     @Autowired
     BanquierService bq;
     
+    boolean created=false;
+    
     @RequestMapping(value="login", method=RequestMethod.GET)
     public ModelAndView init(){
-        init.InitService();
+        if (!created){
+            init.InitService();
+            created=true;
+        }
         ModelAndView mav = new ModelAndView("login");
-        return mav;
+            return mav;
     }
     
     @RequestMapping(value="index", method = RequestMethod.POST)

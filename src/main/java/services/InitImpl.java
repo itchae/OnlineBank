@@ -47,12 +47,12 @@ public class InitImpl implements InitService{
         c.addBA(ba);
         c.addBA(ba2);
         
-        c2.addBA(ba3);
-        c2.addBA(ba2);
+        //c2.addBA(ba3);
+        //c2.addBA(ba2);
         
-        bank.save(b);
+        //bank.save(b);
         p.save(c);
-        p.save(c2);
+        //p.save(c2);
     }
     
 }
