@@ -14,6 +14,8 @@ import dao.VirementEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -24,9 +26,6 @@ public class TransferImpl implements TransferService{
 
     @Autowired
     private VirementDAO vir; 
-    
-    @Autowired
-    private CompteDAO compte; 
     
     @Autowired
     private BankAccountDAO ba; 
@@ -43,15 +42,17 @@ public class TransferImpl implements TransferService{
     }
 
     @Override
+    @Transactional(propagation=Propagation.REQUIRED, noRollbackFor=Exception.class)
     public boolean ajoutTransfert(String intitule, String solde, String compte1, String compte2) {
         Long c1 = (Long)Long.parseLong(compte1);
         Long c2 = (Long)Long.parseLong(compte2);
         
         BankAccountEntity debiteur = ba.find(c2);
         BankAccountEntity debite = ba.find(c1);
-        if (debiteur==null || debite==null){
+        if (debiteur==null || debite==null || Double.parseDouble(solde)<0){
             return false; 
         }
+        
         /*if (l_debiteur.size()==1){
             debiteur = l_debiteur.get(0);
         }else{
@@ -60,8 +61,10 @@ public class TransferImpl implements TransferService{
         VirementEntity v = new VirementEntity(intitule, Double.parseDouble(solde), debiteur, debite);
         debiteur.addEnvoi(v);
         debite.addRecu(v);
-        //ba.save(debite);
-        //ba.save(debiteur);
+        ba.update(debite);
+        ba.update(debiteur);
+        ba.save(debite);
+        ba.save(debiteur);
         vir.save(v);
         
         return true; 

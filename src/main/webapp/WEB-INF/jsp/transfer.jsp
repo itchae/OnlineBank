@@ -15,6 +15,7 @@
         <jsp:include page="navbar.jsp"/>
 
         <h1>Transfer page</h1>
+        <p>${resultat}</p>
         
         <FORM method="POST" ACTION="transfer.htm">
             <P> Nommez la transaction : <INPUT Type="text" Name=nom></p>
