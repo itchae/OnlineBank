@@ -12,10 +12,11 @@ import java.util.List;
  * @author lucille
  */
 public interface VirementDAO {
-    public void save(ProfessionnelEntity c);
-    public void update(ProfessionnelEntity c);
-    public void delete(ProfessionnelEntity c);
-    public ProfessionnelEntity find(long id);
-    public List<ProfessionnelEntity> findAll();
-    public List<ProfessionnelEntity> findByName(String nom);
+    public void save(VirementEntity c);
+    public void update(VirementEntity c);
+    public void delete(VirementEntity c);
+    public VirementEntity find(long id);
+    public List<VirementEntity> findAll();
+    public List<VirementEntity> findFrom(long id);
+    public List<VirementEntity> findTo(long id);
 }

@@ -31,23 +31,19 @@ public class CompteImpl implements CompteService{
     @Override
     public String printAccount(long id) {
         CompteEntity ce = this.c.find(id);
-        // Regarder si particulier, pro ou banquier ? 
-        
         List<BankAccountEntity> bankAccount = ce.getBa();
-        //List<BankAccountEntity> bankAccount = this.bankAccountDao.findAll();
         String result="";
         for(int i=0; i<bankAccount.size();i++){
-            result +="<li><a href=#>"+bankAccount.get(i).toString()+"</a></li>";
-            //List<CompteEntity> comptes = bankAccount.get(i).getUser();
-            //result += comptes;
-            //for(int j=0; j<comptes.size(); j++){
-                //result += "<p>"+j+"</p>";
-                //if(comptes.get(j).getId() == id){
-                    //
-                //}
-            //}
+            result +="<li><a href='consultAccount.htm?param="+bankAccount.get(i).getId()+"'>"+bankAccount.get(i).toString()+"</a></li>";
         }
         return result;
+    }
+    
+    @Override
+    public List<BankAccountEntity> getAccount(long id){
+        CompteEntity ce = this.c.find(id);
+        List<BankAccountEntity> bankAccount = ce.getBa();
+        return bankAccount; 
     }
 
     @Override

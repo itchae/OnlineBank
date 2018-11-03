@@ -17,8 +17,9 @@
         <h1>Transfer page</h1>
         
         <FORM method="POST" ACTION="transfer.htm">
+            <P> Nommez la transaction : <INPUT Type="text" Name=nom></p>
            <P> Entrez la somme à transferer : <INPUT Type=text Name=somme> </P>
-	   <P> Entrez le compte à débiter : <INPUT Type=text Name=debiteur></P>
+           <P> Entrez le compte a debiter : <INPUT Type=text Name=debiteur></P>
            <P> Entrez le compte beneficieur : <INPUT Type=text Name=beneficieur></P>
 	   <P> <INPUT Type=submit VALUE="OK"> </P>
 	</FORM>

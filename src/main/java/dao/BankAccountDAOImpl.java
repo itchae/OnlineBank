@@ -25,7 +25,9 @@ public class BankAccountDAOImpl implements BankAccountDAO{
     @Transactional
     @Override
     public void save(BankAccountEntity b) {
-        b = em.merge(b);
+        
+        //BankAccountEntity entite_attachee=em.merge(VirementEntity);
+        em.merge(b);
         em.persist(b);
     }
 

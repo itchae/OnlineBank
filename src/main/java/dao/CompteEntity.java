@@ -79,6 +79,8 @@ public class CompteEntity implements Serializable {
     )
     @ManyToMany(cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<BankAccountEntity> ba = new ArrayList<BankAccountEntity>(); 
+    
+    
 
     public List<BankAccountEntity> getBa() {
         return ba;

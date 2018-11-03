@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -32,9 +34,24 @@ public class VirementEntity implements Serializable{
     @Column (name="montant")
     private double montant;
 
-    @Column (name="nomActeur")
-    private String nomActeur;
+    @ManyToOne
+    @JoinColumn(name="envoi")
+    private BankAccountEntity idActeur;
+    
+    @ManyToOne
+    @JoinColumn(name="reception")
+    private BankAccountEntity idRecepteur; 
 
+    public VirementEntity(String intitule, double montant, BankAccountEntity idActeur, BankAccountEntity idRecepteur) {
+        this.intitule = intitule;
+        this.montant = montant;
+        this.idActeur = idActeur;
+        this.idRecepteur = idRecepteur;
+    }
+
+    public VirementEntity() {
+    }
+    
     public Long getId() {
         return id;
     }
@@ -59,13 +76,23 @@ public class VirementEntity implements Serializable{
         this.montant = montant;
     }
 
-    public String getNomActeur() {
-        return nomActeur;
+    public BankAccountEntity getIdActeur() {
+        return idActeur;
     }
 
-    public void setNomActeur(String nomActeur) {
-        this.nomActeur = nomActeur;
+    public void setIdActeur(BankAccountEntity idActeur) {
+        this.idActeur = idActeur;
     }
+
+    public BankAccountEntity getIdRecepteur() {
+        return idRecepteur;
+    }
+
+    public void setIdRecepteur(BankAccountEntity idRecepteur) {
+        this.idRecepteur = idRecepteur;
+    }
+
+
     
     
 

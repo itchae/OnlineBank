@@ -6,6 +6,9 @@
 package dao;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,40 +19,54 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public class VirementDAOImpl implements VirementDAO{
 
+    @PersistenceContext(unitName="PersonnePU")
+    private EntityManager em;
+    
     @Transactional
     @Override
-    public void save(ProfessionnelEntity c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void save(VirementEntity v) {
+        v = em.merge(v);
+        em.persist(v);
     }
 
     @Transactional
     @Override
-    public void update(ProfessionnelEntity c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(VirementEntity v) {
+        em.merge(v);
     }
 
     @Transactional
     @Override
-    public void delete(ProfessionnelEntity c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(VirementEntity v) {
+        v = em.merge(v);
+        em.remove(v);
     }
 
     @Transactional
     @Override
-    public ProfessionnelEntity find(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public VirementEntity find(long id) {
+        return em.find(VirementEntity.class, id);
     }
 
     @Transactional
     @Override
-    public List<ProfessionnelEntity> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<VirementEntity> findAll() {
+        Query q = em.createQuery("SELECT h FROM VirementEntity h");
+        return q.getResultList();
     }
 
     @Transactional
     @Override
-    public List<ProfessionnelEntity> findByName(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<VirementEntity> findFrom(long id) {
+        Query q = em.createQuery("SELECT h FROM VirementEntity h WHERE idActeur = ?").setParameter(1, id);
+        return q.getResultList();
+    }
+    
+    @Transactional
+    @Override
+    public List<VirementEntity> findTo(long id) {
+        Query q = em.createQuery("SELECT h FROM VirementEntity h WHERE idRecepteur = ?").setParameter(1, id);
+        return q.getResultList();
     }
     
 }
