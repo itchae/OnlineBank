@@ -91,7 +91,6 @@ public class LoginController {
         }
         mav = new ModelAndView("listAccount");
         
-        mav.addObject("welcome", coService.welcome(login));
         mav.addObject("listePart", particulierService.printComptes());
         mav.addObject("listeComptes", list);
         mav.addObject("idwtf", id);

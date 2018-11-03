@@ -8,17 +8,25 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="styles/lutostyle.css">
+     <link rel="stylesheet" type="text/css" href="styles/animate.css">
         <title> Login to Luto Bank</title>
     </head>
 
     <body>
         <div class="container">
-                <H1>Page de connexion: </H1>
-                <FORM method="POST" ACTION="index.htm">
-                   <P> Entrez votre login : <INPUT Type=text Name=login> </P>
-                   <P> Entrez votre mot de passe : <INPUT Type=text Name=mdp></P>
-                   <P> <input class="btn btn-primary" type="submit" value="Log In"> </P>
-                </FORM>
+            <div class="center-screen">
+                <div class="form-content">
+                <h1 class="title-login">Welcome on Luto Bank </h1>
+                <form class="form-signin" id="Login" method="POST" ACTION="index.htm">
+                    <div class="form-group">
+                        <input type=text name=login class="form-control" id="inputLogin" placeholder="Username" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type=password name=mdp class="form-control" id="inputPassword" placeholder="Password" required>
+                    </div>
+                   <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
             </div>
         </div>
     </body>

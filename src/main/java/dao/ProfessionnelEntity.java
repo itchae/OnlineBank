@@ -43,7 +43,7 @@ public class ProfessionnelEntity extends CompteEntity {
     public void setSiret(String siret) {
         this.siret = siret;
     }
-
+    
     public String getType_entreprise() {
         return type_entreprise;
     }
