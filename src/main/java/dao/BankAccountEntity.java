@@ -8,12 +8,15 @@ package dao;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,6 +41,12 @@ public class BankAccountEntity implements Serializable{
     
     @ManyToMany(mappedBy = "ba")
     List<CompteEntity> user = new ArrayList<CompteEntity>(); 
+    
+    @OneToMany(mappedBy="idRecepteur") 
+    List<VirementEntity> recu = new ArrayList<VirementEntity>();
+    
+    @OneToMany(mappedBy="idActeur") 
+    List<VirementEntity> envoi = new ArrayList<VirementEntity>();
 
     public List<CompteEntity> getUser() {
         return user;
@@ -58,6 +67,30 @@ public class BankAccountEntity implements Serializable{
     public BankAccountEntity(String intitule, double solde) {
         this.intitule = intitule;
         this.solde = solde;
+    }
+
+    public void addRecu(VirementEntity v){
+        this.recu.add(v);
+    }
+    
+    public void addEnvoi(VirementEntity v){
+        this.envoi.add(v);
+    }
+    
+    public List<VirementEntity> getRecu() {
+        return recu;
+    }
+
+    public void setRecu(List<VirementEntity> recu) {
+        this.recu = recu;
+    }
+
+    public List<VirementEntity> getEnvoi() {
+        return envoi;
+    }
+
+    public void setEnvoi(List<VirementEntity> envoi) {
+        this.envoi = envoi;
     }
 
     

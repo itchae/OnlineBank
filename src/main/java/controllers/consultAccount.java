@@ -53,6 +53,7 @@ public class consultAccount {
   public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
     ModelAndView mav = null;
     HttpSession session = request.getSession(false);
+    String idCompte = request.getParameter("param");
     if(session == null){
         mav = new ModelAndView("error");
     }else{
@@ -60,6 +61,7 @@ public class consultAccount {
     }
     
     mav.addObject("listePart", particulierService.printComptes());
+    mav.addObject("idCompte", idCompte);
     //mav.addObject("login", new Login());
     return mav;
   }

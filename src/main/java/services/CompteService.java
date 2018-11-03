@@ -5,6 +5,9 @@
  */
 package services;
 
+import dao.BankAccountEntity;
+import java.util.List;
+
 /**
  *
  * @author lucille
@@ -15,4 +18,5 @@ public interface CompteService {
     public String printAccount(long id);
     public void remplir(String intitule, double solde);
     public String compteRole(long id);
+    public List<BankAccountEntity> getAccount(long id);
 }
