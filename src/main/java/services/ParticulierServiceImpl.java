@@ -138,5 +138,17 @@ public class ParticulierServiceImpl implements ParticulierService{
         p.setTel(value);
         this.particulierDao.update(p);
     }
+
+    @Override
+    public String getPrenom(long id) {
+        return this.particulierDao.find(id).getPrenom();
+    }
+
+    @Override
+    public void setPrenom(long id, String value) {
+        ParticulierEntity p = this.particulierDao.find(id);
+        p.setPrenom(value);
+        this.particulierDao.update(p);
+    }
     
 }

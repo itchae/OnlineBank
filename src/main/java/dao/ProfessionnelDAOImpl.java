@@ -24,7 +24,7 @@ public class ProfessionnelDAOImpl implements ProfessionnelDAO{
     
     @Transactional
     @Override
-    public void save(ProfessionnelEntity pro) {
+    public void save(CompteEntity pro) {
         pro = em.merge(pro);
     }
 

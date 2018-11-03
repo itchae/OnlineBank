@@ -11,7 +11,9 @@ import dao.BanquierDAO;
 import dao.BanquierEntity;
 import dao.CompteEntity;
 import dao.ParticulierDAO;
+import dao.ProfessionnelDAO;
 import dao.ParticulierEntity;
+import dao.ProfessionnelEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,9 @@ public class InitImpl implements InitService{
     ParticulierDAO p;
     
     @Autowired
+    ProfessionnelDAO pro;
+    
+    @Autowired
     BankAccountDAO b;
     
     @Autowired
@@ -40,6 +45,7 @@ public class InitImpl implements InitService{
     @Override
     public void InitService() {
         CompteEntity c = new ParticulierEntity("Charles", 1, "ok", "Henri", "ok", "Lemail", "0605040201", "Adresse");
+        CompteEntity c3 = new ProfessionnelEntity("pro", "proland", "pro", "pro@pro.pro", "1 rue des pros", "3615", "812154136541", "EIRL");
         CompteEntity c2 = new ParticulierEntity("Charles", 1, "test", "Henri", "test", "Lemail", "0605040201", "Adresse");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
@@ -53,6 +59,7 @@ public class InitImpl implements InitService{
         
         //bank.save(b);
         p.save(c);
+        pro.save(c3);
         //p.save(c2);
     }
     

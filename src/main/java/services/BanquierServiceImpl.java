@@ -56,5 +56,45 @@ public class BanquierServiceImpl implements BanquierService {
         return true;
     }
 
+    @Override
+    public String getPrenom(long id) {
+        return this.banquierDao.find(id).getPrenom();
+    }
+
+    @Override
+    public void setMdp(long id, String value) {
+        BanquierEntity p = this.banquierDao.find(id);
+        p.setPassword(value);
+        this.banquierDao.update(p);
+    }
+
+    @Override
+    public void setEmail(long id, String value) {
+        BanquierEntity p = this.banquierDao.find(id);
+        p.setMail(value);
+        this.banquierDao.update(p);
+    }
+
+    @Override
+    public void setAdresse(long id, String value) {
+        BanquierEntity p = this.banquierDao.find(id);
+        p.setAdresse(value);
+        this.banquierDao.update(p);
+    }
+
+    @Override
+    public void setPhone(long id, String value) {
+        BanquierEntity p = this.banquierDao.find(id);
+        p.setTel(value);
+        this.banquierDao.update(p);
+    }
+
+    @Override
+    public void setPrenom(long id, String value) {
+        BanquierEntity p = this.banquierDao.find(id);
+        p.setPrenom(value);
+        this.banquierDao.update(p);
+    }
+
     
 }

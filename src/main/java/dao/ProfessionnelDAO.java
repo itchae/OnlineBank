@@ -12,7 +12,7 @@ import java.util.List;
  * @author tbonnion
  */
 public interface ProfessionnelDAO {
-    public void save(ProfessionnelEntity c);
+    public void save(CompteEntity c);
     public void update(ProfessionnelEntity c);
     public void delete(ProfessionnelEntity c);
     public ProfessionnelEntity find(long id);

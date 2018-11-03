@@ -15,6 +15,7 @@ import javax.persistence.Entity;
 @Entity
 public class ProfessionnelEntity extends CompteEntity {
     
+    
     @Column (name="siret", unique=true)
     private String siret;
 
@@ -24,6 +25,16 @@ public class ProfessionnelEntity extends CompteEntity {
     
     @Column (name="idBanquier")
     private long idBanquier;
+    
+    public ProfessionnelEntity(){
+        
+    }
+    
+    public ProfessionnelEntity(String login, String nom, String password, String mail, String adresse, String tel,String siret, String type){
+        super(login, nom, password, mail, adresse, tel);
+        this.siret = siret;
+        this.type_entreprise = type;
+    }
     
     public String getSiret() {
         return siret;

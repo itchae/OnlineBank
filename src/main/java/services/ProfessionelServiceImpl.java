@@ -20,9 +20,6 @@ public class ProfessionelServiceImpl implements ProfessionelService{
 
     @Autowired
     ProfessionnelDAO proDao; 
-    
-    
-    
 
     @Override
     public boolean tryConnect(String login, String pwd) {
@@ -62,6 +59,51 @@ public class ProfessionelServiceImpl implements ProfessionelService{
     @Override
     public String getAdresse(long id) {
         return proDao.find(id).getAdresse();
+    }
+
+    @Override
+    public String getSiret(long id) {
+        return proDao.find(id).getSiret();
+    }
+
+    @Override
+    public String getTypeEntreprise(long id) {
+        return proDao.find(id).getType_entreprise();
+    }
+
+    @Override
+    public void setMdp(long id, String value) {
+        ProfessionnelEntity p = this.proDao.find(id);
+        p.setPassword(value);
+        this.proDao.update(p);
+    }
+
+    @Override
+    public void setEmail(long id, String value) {
+        ProfessionnelEntity p = this.proDao.find(id);
+        p.setMail(value);
+        this.proDao.update(p);
+    }
+
+    @Override
+    public void setAdresse(long id, String value) {
+        ProfessionnelEntity p = this.proDao.find(id);
+        p.setAdresse(value);
+        this.proDao.update(p);
+    }
+
+    @Override
+    public void setPhone(long id, String value) {
+        ProfessionnelEntity p = this.proDao.find(id);
+        p.setTel(value);
+        this.proDao.update(p);
+    }
+
+    @Override
+    public void setSiret(long id, String value) {
+        ProfessionnelEntity p = this.proDao.find(id);
+        p.setSiret(value);
+        this.proDao.update(p);
     }
     
 }
