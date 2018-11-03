@@ -70,10 +70,14 @@ public class BankAccountEntity implements Serializable{
     }
 
     public void addRecu(VirementEntity v){
+        Double montant = v.getMontant(); 
+        this.setSolde(this.solde + montant);
         this.recu.add(v);
     }
     
     public void addEnvoi(VirementEntity v){
+        Double montant = v.getMontant(); 
+        this.setSolde(this.solde - montant);
         this.envoi.add(v);
     }
     
