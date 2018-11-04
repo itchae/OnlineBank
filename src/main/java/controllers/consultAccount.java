@@ -68,8 +68,12 @@ public class consultAccount {
     Long id = (Long)Long.parseLong(idCompte);
     List<VirementEntity> virementsFrom = c.getFrom(id);
     List<VirementEntity> virementsTo = c.getTo(id);
+    String printFrom = c.printFrom(id);
+    String printTo = c.printTo(id);
     mav.addObject("from", virementsFrom);
     mav.addObject("to", virementsTo);
+    mav.addObject("printFrom", printFrom);
+    mav.addObject("printTo", printTo);
     return mav;
   }
     

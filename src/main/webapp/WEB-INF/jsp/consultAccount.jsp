@@ -14,14 +14,15 @@
     <body>
         <jsp:include page="navbar.jsp"/>
         <h1>Consultation du compte</h1>
+        <p> Emi : </p>
+        <ul>
+        <p>${printFrom}</p>
+        </ul>
         
-        <p>${idCompte}</p>
-        <p>${idlala}</p>
-        <p>${from}</p>
-        <p>${to}</p>
-        <% for (int i=0; i<10; i++) { %>
-            Mouvement <%= i %> <br/>
-        <% }%>
+        <p> Recu : </p>
+        <ul>
+        <p>${printTo}</p>
+        </ul></br>
         <a href="listAccount.htm">Retour à la liste des comptes</a>
     </body>
 </html>

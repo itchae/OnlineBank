@@ -22,4 +22,6 @@ public interface CompteService {
     public List<BankAccountEntity> getAccount(String login);
     public List<VirementEntity> getFrom(long id);
     public List<VirementEntity> getTo(long id);
+    public String printFrom(long id);
+    public String printTo(long id);
 }

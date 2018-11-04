@@ -109,5 +109,47 @@ public class CompteImpl implements CompteService{
         return res;
     }
 
+    @Override
+    public String printFrom(long id) {
+        BankAccountEntity b = bankAccountDao.find(id);
+        List<VirementEntity> liste = vir.findAll();
+        List<VirementEntity> res = new ArrayList<VirementEntity>();
+        String affichage = ""; 
+        for(int i=0 ; i<liste.size() ; i++){
+            if(liste.get(i).getIdActeur().equals(b)){
+                affichage += "<li> ";
+                affichage += liste.get(i).getIntitule();
+                affichage += " ";
+                affichage += liste.get(i).getMontant();
+                affichage += " ";
+                affichage += liste.get(i).getIdRecepteur().getId();
+                affichage += "</li>";
+                
+            }
+        }
+        return affichage;
+    }
+
+    @Override
+    public String printTo(long id) {
+        BankAccountEntity b = bankAccountDao.find(id);
+        List<VirementEntity> liste = vir.findAll();
+        List<VirementEntity> res = new ArrayList<VirementEntity>();
+        String affichage = ""; 
+        for(int i=0 ; i<liste.size() ; i++){
+            if(liste.get(i).getIdRecepteur().equals(b)){
+                affichage += "<li> ";
+                affichage += liste.get(i).getIntitule();
+                affichage += " ";
+                affichage += liste.get(i).getMontant();
+                affichage += " ";
+                affichage += liste.get(i).getIdActeur().getId();
+                affichage += "</li>";
+                
+            }
+        }
+        return affichage;
+    }
+
     
 }

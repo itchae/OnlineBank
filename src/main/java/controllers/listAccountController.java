@@ -57,7 +57,7 @@ public class listAccountController {
         HttpSession session = request.getSession(false);
         String login = (String)session.getAttribute("login");
         String list = ba.printAccount(login);
-        List<BankAccountEntity> listBankAccount = ba.getAccount(id);
+        List<BankAccountEntity> listBankAccount = ba.getAccount(login);
 	ModelAndView mv = new ModelAndView("listAccount");
         mv.addObject("idwtf", login);
         mv.addObject("listeComptes", list);
