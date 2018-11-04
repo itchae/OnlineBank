@@ -5,6 +5,8 @@
  */
 package controllers;
 
+import dao.VirementEntity;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import services.CompteService;
 import services.ParticulierService;
 
 /**
@@ -24,6 +27,9 @@ public class consultAccount {
     
     @Autowired
     ParticulierService particulierService;
+    
+    @Autowired
+    CompteService c;
     
     @RequestMapping(value="consultAccount", method = RequestMethod.POST)
     protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response) 
@@ -59,10 +65,11 @@ public class consultAccount {
     }else{
         mav = new ModelAndView("consultAccount");
     }
-    
-    mav.addObject("listePart", particulierService.printComptes());
-    mav.addObject("idCompte", idCompte);
-    //mav.addObject("login", new Login());
+    Long id = (Long)Long.parseLong(idCompte);
+    List<VirementEntity> virementsFrom = c.getFrom(id);
+    List<VirementEntity> virementsTo = c.getTo(id);
+    mav.addObject("from", virementsFrom);
+    mav.addObject("to", virementsTo);
     return mav;
   }
     

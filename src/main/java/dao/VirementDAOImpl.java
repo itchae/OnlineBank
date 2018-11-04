@@ -58,14 +58,14 @@ public class VirementDAOImpl implements VirementDAO{
     @Transactional
     @Override
     public List<VirementEntity> findFrom(long id) {
-        Query q = em.createQuery("SELECT h FROM VirementEntity h WHERE idActeur = ?").setParameter(1, id);
+        Query q = em.createQuery("SELECT h FROM VirementEntity h WHERE h.idRecepteur = ?").setParameter(1, id);
         return q.getResultList();
     }
     
     @Transactional
     @Override
     public List<VirementEntity> findTo(long id) {
-        Query q = em.createQuery("SELECT h FROM VirementEntity h WHERE idRecepteur = ?").setParameter(1, id);
+        Query q = em.createQuery("SELECT h FROM VirementEntity h WHERE h.idActeur = ?").setParameter(1, id);
         return q.getResultList();
     }
     

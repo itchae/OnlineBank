@@ -12,6 +12,9 @@ import dao.CompteEntity;
 import dao.ParticulierEntity;
 import dao.ProfessionnelEntity;
 import dao.BanquierEntity;
+import dao.VirementDAO;
+import dao.VirementEntity;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +27,9 @@ import org.springframework.stereotype.Service;
 public class CompteImpl implements CompteService{
     @Autowired
     private BankAccountDAO bankAccountDao;
+    
+    @Autowired
+    private VirementDAO vir; 
     
     @Autowired
     private CompteDAO c;
@@ -75,6 +81,32 @@ public class CompteImpl implements CompteService{
             return "banq";
         }
         return "err";
+    }
+    
+    @Override
+    public List<VirementEntity> getFrom(long id){
+        BankAccountEntity b = bankAccountDao.find(id);
+        List<VirementEntity> liste = vir.findAll();
+        List<VirementEntity> res = new ArrayList<VirementEntity>();
+        for(int i=0 ; i<liste.size() ; i++){
+            if(liste.get(i).getIdActeur().equals(b)){
+                res.add(liste.get(i));
+            }
+        }
+        return res;
+    } 
+    
+    @Override
+    public List<VirementEntity> getTo(long id){
+        BankAccountEntity b = bankAccountDao.find(id);
+        List<VirementEntity> liste = vir.findAll();
+        List<VirementEntity> res = new ArrayList<VirementEntity>();
+        for(int i=0 ; i<liste.size() ; i++){
+            if(liste.get(i).getIdRecepteur().equals(b)){
+                res.add(liste.get(i));
+            }
+        }
+        return res;
     }
 
     

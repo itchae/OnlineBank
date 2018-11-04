@@ -6,6 +6,7 @@
 package services;
 
 import dao.BankAccountEntity;
+import dao.VirementEntity;
 import java.util.List;
 
 /**
@@ -19,4 +20,6 @@ public interface CompteService {
     public void remplir(String intitule, double solde);
     public String compteRole(long id);
     public List<BankAccountEntity> getAccount(long id);
+    public List<VirementEntity> getFrom(long id);
+    public List<VirementEntity> getTo(long id);
 }
