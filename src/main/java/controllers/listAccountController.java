@@ -5,6 +5,8 @@
  */
 package controllers;
 
+import dao.BankAccountEntity;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -55,9 +57,12 @@ public class listAccountController {
         HttpSession session = request.getSession(false);
         String login = (String)session.getAttribute("login");
         String list = ba.printAccount(login);
+        List<BankAccountEntity> listBankAccount = ba.getAccount(id);
 	ModelAndView mv = new ModelAndView("listAccount");
         mv.addObject("idwtf", login);
         mv.addObject("listeComptes", list);
+        
+        mv.addObject("listeBA", listBankAccount);
         return mv; 
     }
 

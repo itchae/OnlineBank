@@ -32,6 +32,8 @@
         ${listeComptes}
         </ul>
         
+        <p>${listeBA}</p>
+        
         <!--<p>Liste des particuliers</p>
         <p>${listePart}</p>-->
                 </div>
