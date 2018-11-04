@@ -37,70 +37,70 @@ public class ProfessionelServiceImpl implements ProfessionelService{
     }
 
     @Override
-    public String getLogin(long id) {
+    public String getLogin(String id) {
         return proDao.find(id).getLogin();
     }
 
     @Override
-    public String getMdp(long id) {
+    public String getMdp(String id) {
         return proDao.find(id).getPassword();
     }
 
     @Override
-    public String getEmail(long id) {
+    public String getEmail(String id) {
         return proDao.find(id).getMail();
     }
 
     @Override
-    public String getPhone(long id) {
+    public String getPhone(String id) {
         return proDao.find(id).getTel();
     }
 
     @Override
-    public String getAdresse(long id) {
+    public String getAdresse(String id) {
         return proDao.find(id).getAdresse();
     }
 
     @Override
-    public String getSiret(long id) {
+    public String getSiret(String id) {
         return proDao.find(id).getSiret();
     }
 
     @Override
-    public String getTypeEntreprise(long id) {
+    public String getTypeEntreprise(String id) {
         return proDao.find(id).getType_entreprise();
     }
 
     @Override
-    public void setMdp(long id, String value) {
+    public void setMdp(String id, String value) {
         ProfessionnelEntity p = this.proDao.find(id);
         p.setPassword(value);
         this.proDao.update(p);
     }
 
     @Override
-    public void setEmail(long id, String value) {
+    public void setEmail(String id, String value) {
         ProfessionnelEntity p = this.proDao.find(id);
         p.setMail(value);
         this.proDao.update(p);
     }
 
     @Override
-    public void setAdresse(long id, String value) {
+    public void setAdresse(String id, String value) {
         ProfessionnelEntity p = this.proDao.find(id);
         p.setAdresse(value);
         this.proDao.update(p);
     }
 
     @Override
-    public void setPhone(long id, String value) {
+    public void setPhone(String id, String value) {
         ProfessionnelEntity p = this.proDao.find(id);
         p.setTel(value);
         this.proDao.update(p);
     }
 
     @Override
-    public void setSiret(long id, String value) {
+    public void setSiret(String id, String value) {
         ProfessionnelEntity p = this.proDao.find(id);
         p.setSiret(value);
         this.proDao.update(p);

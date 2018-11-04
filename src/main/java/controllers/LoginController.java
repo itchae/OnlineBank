@@ -66,16 +66,15 @@ public class LoginController {
         String login;
         String list = "";
         //String listeComptes = part.printComptes();
-        long id = -1;
+        String id = null;
         
         if (session.getAttribute("login") == null){
             login = request.getParameter("login");
             String mdp = request.getParameter("mdp");
             
             id = coService.connection(login, mdp);
-            if(id !=-1){
+            if(id != null){
                 session.setAttribute("login", login);
-                session.setAttribute("id", id);
                 String res = ba.compteRole(id);
                 session.setAttribute("role", res); //ajout du role de l'utilisateur loggé
                 list = ba.printAccount(id);

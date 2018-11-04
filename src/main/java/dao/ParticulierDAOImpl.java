@@ -46,7 +46,7 @@ public class ParticulierDAOImpl implements ParticulierDAO{
 
     @Transactional(readOnly = true)
     @Override
-    public ParticulierEntity find(long id) {
+    public ParticulierEntity find(String id) {
         return em.find(ParticulierEntity.class, id);
     }
 

@@ -43,7 +43,7 @@ public class ProfessionnelDAOImpl implements ProfessionnelDAO{
 
     @Transactional(readOnly = true)
     @Override
-    public ProfessionnelEntity find(long id) {
+    public ProfessionnelEntity find(String id) {
         return em.find(ProfessionnelEntity.class, id);
     }
 

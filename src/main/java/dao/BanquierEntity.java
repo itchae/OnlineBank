@@ -15,9 +15,6 @@ import javax.persistence.UniqueConstraint;
  * @author lucille
  */
 @Entity
-@Table(
-        uniqueConstraints=
-            @UniqueConstraint(columnNames={"LOGIN"}))
 public class BanquierEntity extends CompteEntity{
     @Column (name="prenom")
     private String prenom;
@@ -42,7 +39,7 @@ public class BanquierEntity extends CompteEntity{
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (super.getId() != null ? super.getId().hashCode() : 0);
+        hash += (super.getLogin() != null ? super.getLogin().hashCode() : 0);
         return hash;
     }
 
@@ -50,6 +47,6 @@ public class BanquierEntity extends CompteEntity{
 
     @Override
     public String toString() {
-        return "dao.ProfessionnelEntity[ super.getId()=" + super.getId() + " ]";
+        return "dao.ProfessionnelEntity[ super.getLogin()=" + super.getLogin() + " ]";
     }
 }

@@ -44,7 +44,7 @@ public class BanquierDAOImpl implements BanquierDAO {
 
     @Transactional
     @Override
-    public BanquierEntity find(long id) {
+    public BanquierEntity find(String id) {
         return em.find(BanquierEntity.class, id);
     }
 

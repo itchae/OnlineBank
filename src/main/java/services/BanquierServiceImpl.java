@@ -25,27 +25,27 @@ public class BanquierServiceImpl implements BanquierService {
     }
         
     @Override
-    public String getLogin(long id) {
+    public String getLogin(String id) {
         return banquierDao.find(id).getLogin();
     }
 
     @Override
-    public String getMdp(long id) {
+    public String getMdp(String id) {
         return banquierDao.find(id).getPassword();
     }
 
     @Override
-    public String getEmail(long id) {
+    public String getEmail(String id) {
         return banquierDao.find(id).getMail();
     }
 
     @Override
-    public String getPhone(long id) {
+    public String getPhone(String id) {
         return banquierDao.find(id).getTel();
     }
 
     @Override
-    public String getAdresse(long id) {
+    public String getAdresse(String id) {
         return banquierDao.find(id).getTel();
     }
 
@@ -57,40 +57,40 @@ public class BanquierServiceImpl implements BanquierService {
     }
 
     @Override
-    public String getPrenom(long id) {
+    public String getPrenom(String id) {
         return this.banquierDao.find(id).getPrenom();
     }
 
     @Override
-    public void setMdp(long id, String value) {
+    public void setMdp(String id, String value) {
         BanquierEntity p = this.banquierDao.find(id);
         p.setPassword(value);
         this.banquierDao.update(p);
     }
 
     @Override
-    public void setEmail(long id, String value) {
+    public void setEmail(String id, String value) {
         BanquierEntity p = this.banquierDao.find(id);
         p.setMail(value);
         this.banquierDao.update(p);
     }
 
     @Override
-    public void setAdresse(long id, String value) {
+    public void setAdresse(String id, String value) {
         BanquierEntity p = this.banquierDao.find(id);
         p.setAdresse(value);
         this.banquierDao.update(p);
     }
 
     @Override
-    public void setPhone(long id, String value) {
+    public void setPhone(String id, String value) {
         BanquierEntity p = this.banquierDao.find(id);
         p.setTel(value);
         this.banquierDao.update(p);
     }
 
     @Override
-    public void setPrenom(long id, String value) {
+    public void setPrenom(String id, String value) {
         BanquierEntity p = this.banquierDao.find(id);
         p.setPrenom(value);
         this.banquierDao.update(p);

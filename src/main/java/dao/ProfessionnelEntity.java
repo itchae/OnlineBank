@@ -24,7 +24,7 @@ public class ProfessionnelEntity extends CompteEntity {
     private String type_entreprise;
     
     @Column (name="idBanquier")
-    private long idBanquier;
+    private String idBanquier;
     
     public ProfessionnelEntity(){
         
@@ -62,7 +62,7 @@ public class ProfessionnelEntity extends CompteEntity {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (super.getId() != null ? super.getId().hashCode() : 0);
+        hash += (super.getLogin() != null ? super.getLogin().hashCode() : 0);
         return hash;
     }
 
@@ -70,7 +70,7 @@ public class ProfessionnelEntity extends CompteEntity {
 
     @Override
     public String toString() {
-        return "dao.ProfessionnelEntity[ super.getId()=" + super.getId() + " ]";
+        return "dao.ProfessionnelEntity[ super.getId()=" + super.getLogin() + " ]";
     }
     
 }

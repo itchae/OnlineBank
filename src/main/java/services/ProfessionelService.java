@@ -10,18 +10,18 @@ package services;
  * @author lucille
  */
 public interface ProfessionelService {
-    public String getLogin(long id);
-    public String getMdp(long id);
-    public String getEmail(long id);
-    public String getPhone(long id);
-    public String getAdresse(long id);
-    public String getSiret(long id);
-    public String getTypeEntreprise(long id);
-    public void setMdp(long id,String value);
-    public void setEmail(long id,String value);
-    public void setAdresse(long id,String value);
-    public void setPhone(long id,String value);
-    public void setSiret(long id,String value);
+    public String getLogin(String login);
+    public String getMdp(String login);
+    public String getEmail(String login);
+    public String getPhone(String login);
+    public String getAdresse(String login);
+    public String getSiret(String login);
+    public String getTypeEntreprise(String login);
+    public void setMdp(String login,String value);
+    public void setEmail(String login,String value);
+    public void setAdresse(String login,String value);
+    public void setPhone(String login,String value);
+    public void setSiret(String login,String value);
     public boolean tryConnect(String login, String pwd);
     
 }

@@ -42,7 +42,7 @@ public class parameterController {
     { 
         HttpSession session = request.getSession(false);
         String res = (String)session.getAttribute("role");
-        long id = (long)session.getAttribute("id");
+        String id = (String)session.getAttribute("login");
         if (res.equals("par")){
             if(!request.getParameter("mail").equals("")){
                 part.setEmail(id, request.getParameter("mail"));
@@ -53,7 +53,7 @@ public class parameterController {
             if(!request.getParameter("phone").equals("")){
                 part.setPhone(id, request.getParameter("phone"));
             }
-            if(!request.getParameter("mdpchange").equals("") && request.getParameter("mdpchange").equals(request.getParameter("mdpconf"))){
+            if(!request.getParameter("mdpchange").equals("")){
                 part.setMdp(id, request.getParameter("mdpchange"));
             }
             if(!request.getParameter("prenom").equals("")){
@@ -105,7 +105,7 @@ public class parameterController {
     { 
         HttpSession session = request.getSession(false);
         String res = (String)session.getAttribute("role");
-        long id = (long)session.getAttribute("id");
+        String id = (String)session.getAttribute("login");
         ModelAndView mv = new ModelAndView("parameter");
         if (res.equals("par")){
             String login = part.getLogin(id);

@@ -14,20 +14,20 @@ import org.springframework.stereotype.Service;
 
 public interface ParticulierService {
 
-    public String getLogin(long id);
-    public String getMdp(long id);
-    public String getEmail(long id);
-    public String getPhone(long id);
-    public String getAdresse(long id);
-    public String getPrenom(long id);
-    public void setMdp(long id,String value);
-    public void setEmail(long id,String value);
-    public void setAdresse(long id,String value);
-    public void setPhone(long id,String value);
-    public void setPrenom(long id,String value);
-    public long getBanquier(long id);
+    public String getLogin(String id);
+    public String getMdp(String id);
+    public String getEmail(String id);
+    public String getPhone(String id);
+    public String getAdresse(String id);
+    public String getPrenom(String id);
+    public void setMdp(String id,String value);
+    public void setEmail(String id,String value);
+    public void setAdresse(String id,String value);
+    public void setPhone(String id,String value);
+    public void setPrenom(String id,String value);
+    public String getBanquier(String id);
     public boolean tryConnect(String login, String pwd);
-    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, long idBanquier);
+    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, String idBanquier);
     public String printComptes();
     
 }

@@ -36,7 +36,7 @@ public class ParticulierServiceImpl implements ParticulierService{
     }
     
     @Override
-    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, long idBanquier){
+    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, String idBanquier){
         CompteEntity p = new ParticulierEntity(prenom, idBanquier, login, nom, mdp, email, phone, adress);
         BankAccountEntity ba = new BankAccountEntity("Coucou", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Hello", 200);
@@ -53,28 +53,28 @@ public class ParticulierServiceImpl implements ParticulierService{
     }
     
     @Override
-    public String getLogin(long id) {
+    public String getLogin(String id) {
         return this.particulierDao.find(id).getLogin();
     }
 
     @Override
-    public String getMdp(long id) {
+    public String getMdp(String id) {
         return this.particulierDao.find(id).getPassword();
     }
 
     @Override
-    public String getEmail(long id) {
+    public String getEmail(String id) {
         return this.particulierDao.find(id).getMail();
                 
     }
 
     @Override
-    public String getPhone(long id) {
+    public String getPhone(String id) {
         return this.particulierDao.find(id).getTel();
     }
 
     @Override
-    public String getAdresse(long id) {
+    public String getAdresse(String id) {
         return this.particulierDao.find(id).getAdresse();
     }
 
@@ -107,45 +107,45 @@ public class ParticulierServiceImpl implements ParticulierService{
     }
 
     @Override
-    public long getBanquier(long id) {
+    public String getBanquier(String id) {
         return this.particulierDao.find(id).getIdBanquier();
     }
 
     @Override
-    public void setMdp(long id,String value) {
+    public void setMdp(String id,String value) {
         ParticulierEntity p = this.particulierDao.find(id);
         p.setPassword(value);
         this.particulierDao.update(p);
     }
 
     @Override
-    public void setEmail(long id,String value) {
+    public void setEmail(String id,String value) {
         ParticulierEntity p = this.particulierDao.find(id);
         p.setMail(value);
         this.particulierDao.update(p);
     }
 
     @Override
-    public void setAdresse(long id,String value) {
+    public void setAdresse(String id,String value) {
         ParticulierEntity p = this.particulierDao.find(id);
         p.setAdresse(value);
         this.particulierDao.update(p);
     }
 
     @Override
-    public void setPhone(long id,String value) {
+    public void setPhone(String id,String value) {
         ParticulierEntity p = this.particulierDao.find(id);
         p.setTel(value);
         this.particulierDao.update(p);
     }
 
     @Override
-    public String getPrenom(long id) {
+    public String getPrenom(String id) {
         return this.particulierDao.find(id).getPrenom();
     }
 
     @Override
-    public void setPrenom(long id, String value) {
+    public void setPrenom(String id, String value) {
         ParticulierEntity p = this.particulierDao.find(id);
         p.setPrenom(value);
         this.particulierDao.update(p);

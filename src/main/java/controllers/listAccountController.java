@@ -35,8 +35,8 @@ public class listAccountController {
     { 
         HttpSession session  = request.getSession(false);
         ModelAndView mv = new ModelAndView();
-        long id = (long)session.getAttribute("id");
-        String list = ba.printAccount(id);
+        String login = (String)session.getAttribute("login");
+        String list = ba.printAccount(login);
         //String listeComptes;
         //String listeComptes = part.printComptes();
         //listeComptes = ba.printAccount((Long)session.getAttribute("id"))
@@ -53,10 +53,10 @@ public class listAccountController {
     @RequestMapping(value="listAccount", method = RequestMethod.GET)
     public ModelAndView initIndex(HttpServletRequest request){
         HttpSession session = request.getSession(false);
-        long id = (long)session.getAttribute("id");
-        String list = ba.printAccount(id);
+        String login = (String)session.getAttribute("login");
+        String list = ba.printAccount(login);
 	ModelAndView mv = new ModelAndView("listAccount");
-        mv.addObject("idwtf", id);
+        mv.addObject("idwtf", login);
         mv.addObject("listeComptes", list);
         return mv; 
     }

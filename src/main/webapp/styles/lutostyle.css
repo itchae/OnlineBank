@@ -9,10 +9,13 @@ background-image : url('https://images.unsplash.com/photo-1493962621260-74cc5a3b
     margin-top: 10px;
     /*min-height: 50vh;*/
     align-items: center;
-    text-align:center;
+    text-align: center;
 }
 ul{
     display : inline-block;
+}
+#parameters input{
+    
 }
 .center-screen {
   display: flex;
@@ -22,7 +25,14 @@ ul{
   text-align: left;
   min-height: 100vh;
 }
-
+.btn.btn-primary{
+  background: #f0ad4e none repeat scroll 0 0;
+  border-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 50%;
+  margin-bottom : 10px;
+}
 .center-screen .btn.btn-primary {
   background: #f0ad4e none repeat scroll 0 0;
   border-color: #f0ad4e;
@@ -33,6 +43,7 @@ ul{
   line-height: 38px;
   padding: 0;
 }
+
 #Login .form-control {
   background: #f7f7f7 none repeat scroll 0 0;
   border: 1px solid #d4d4d4;

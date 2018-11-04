@@ -19,9 +19,9 @@ public class ParticulierEntity extends CompteEntity {
     private String prenom;
     
     @Column (name="idBanquier")
-    private long idBanquier;
+    private String idBanquier;
 
-    public ParticulierEntity(String prenom, long idBanquier, String login, String nom, String password, String mail, String adresse, String tel) {
+    public ParticulierEntity(String prenom, String idBanquier, String login, String nom, String password, String mail, String adresse, String tel) {
         super(login, nom, password, mail, adresse, tel);
         this.prenom = prenom;
         this.idBanquier = idBanquier;
@@ -32,11 +32,11 @@ public class ParticulierEntity extends CompteEntity {
 
     
 
-    public long getIdBanquier() {
+    public String getIdBanquier() {
         return idBanquier;
     }
 
-    public void setIdBanquier(long idBanquier) {
+    public void setIdBanquier(String idBanquier) {
         this.idBanquier = idBanquier;
     }
 
@@ -52,7 +52,7 @@ public class ParticulierEntity extends CompteEntity {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (super.getId() != null ? super.getId().hashCode() : 0);
+        hash += (super.getLogin() != null ? super.getLogin().hashCode() : 0);
         return hash;
     }
 

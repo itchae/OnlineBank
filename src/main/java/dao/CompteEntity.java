@@ -22,16 +22,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
  * @author tbonnion
  */
 @Entity
-@Table(
-        name="COMPTEENTITY", 
-        uniqueConstraints=
-            @UniqueConstraint(columnNames={"login"}))
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 //@Table(uniqueConstraints = {@UniqueConstraint(name = "usr_login", columnNames = { "login" }) })
 public class CompteEntity implements Serializable {
@@ -51,10 +48,7 @@ public class CompteEntity implements Serializable {
     }
     
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private Long id;
-    
-    @Column (name="login", unique=true)
+    @Column(name = "login")
     private String login;
     
     @Column (name="nom")
@@ -145,18 +139,12 @@ public class CompteEntity implements Serializable {
         this.tel = tel;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (login != null ? login.hashCode() : 0);
         return hash;
     }
 
@@ -167,7 +155,7 @@ public class CompteEntity implements Serializable {
             return false;
         }
         CompteEntity other = (CompteEntity) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.login == null && other.login != null) || (this.login != null && !this.login.equals(other.login))) {
             return false;
         }
         return true;
@@ -175,7 +163,7 @@ public class CompteEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "dao.CompteEntity[ id=" + id + " ]";
+        return "dao.CompteEntity[ login=" + login + " ]";
     }
     
 }

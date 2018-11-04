@@ -29,15 +29,13 @@ public class ConnectImpl implements ConnectService{
     }
     
     @Override
-    public long connection(String login, String pwd){
-        List<CompteEntity> list = compteDao.findByLogin(login);
-        if(list.size()==1){
-            String pwdEntre = list.get(0).getPassword();
-            if(pwd.equals(pwdEntre)){
-                return list.get(0).getId();
-            }
+    public String connection(String login, String pwd){
+        CompteEntity entity = compteDao.find(login);
+        String pwdEntre = entity.getPassword();
+        if(pwd.equals(pwdEntre)){
+                return entity.getLogin();
         }
-        return -1;
+        return null;
     }
     
     

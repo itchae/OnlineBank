@@ -29,8 +29,8 @@ public class CompteImpl implements CompteService{
     private CompteDAO c;
     
     @Override
-    public String printAccount(long id) {
-        CompteEntity ce = this.c.find(id);
+    public String printAccount(String login) {
+        CompteEntity ce = this.c.find(login);
         List<BankAccountEntity> bankAccount = ce.getBa();
         String result="";
         for(int i=0; i<bankAccount.size();i++){
@@ -40,19 +40,19 @@ public class CompteImpl implements CompteService{
     }
     
     @Override
-    public List<BankAccountEntity> getAccount(long id){
-        CompteEntity ce = this.c.find(id);
+    public List<BankAccountEntity> getAccount(String login){
+        CompteEntity ce = this.c.find(login);
         List<BankAccountEntity> bankAccount = ce.getBa();
         return bankAccount; 
     }
 
     @Override
-    public String getIntitule(long id) {
+    public String getIntitule(String id) {
         return this.getIntitule(id);
     }
 
     @Override
-    public String getSolde(long id) {
+    public String getSolde(String id) {
         return this.getSolde(id);
     }
 
@@ -64,7 +64,7 @@ public class CompteImpl implements CompteService{
     }
 
     @Override
-    public String compteRole(long id) {
+    public String compteRole(String id) {
         if (this.c.find(id) instanceof ParticulierEntity){
             return "par";
         }

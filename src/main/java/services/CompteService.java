@@ -13,10 +13,10 @@ import java.util.List;
  * @author lucille
  */
 public interface CompteService {
-    public String getIntitule(long id);
-    public String getSolde(long id);
-    public String printAccount(long id);
+    public String getIntitule(String login);
+    public String getSolde(String login);
+    public String printAccount(String login);
     public void remplir(String intitule, double solde);
-    public String compteRole(long id);
-    public List<BankAccountEntity> getAccount(long id);
+    public String compteRole(String login);
+    public List<BankAccountEntity> getAccount(String login);
 }

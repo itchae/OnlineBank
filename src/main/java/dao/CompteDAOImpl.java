@@ -47,8 +47,8 @@ public class CompteDAOImpl implements CompteDAO{
 
     @Transactional(readOnly = true)
     @Override
-    public CompteEntity find(long id) {
-        return em.find(CompteEntity.class, id);
+    public CompteEntity find(String login) {
+        return em.find(CompteEntity.class, login);
     }
 
     @Transactional(readOnly = true)

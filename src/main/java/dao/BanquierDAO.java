@@ -15,7 +15,7 @@ public interface BanquierDAO {
     public void save(BanquierEntity c);
     public void update(BanquierEntity c);
     public void delete(BanquierEntity c);
-    public BanquierEntity find(long id);
+    public BanquierEntity find(String id);
     public List<BanquierEntity> findAll();
     public List<BanquierEntity> findByName(String nom);
 }

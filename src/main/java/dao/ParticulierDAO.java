@@ -15,7 +15,7 @@ public interface ParticulierDAO {
     public void save(CompteEntity h);
     public void update(ParticulierEntity h);
     public void delete(ParticulierEntity h);
-    public ParticulierEntity find(long id);
+    public ParticulierEntity find(String id);
     public List<ParticulierEntity> findAll();
     public List<ParticulierEntity> findByName(String nom);
     public List<CompteEntity> findByLogin(String login);

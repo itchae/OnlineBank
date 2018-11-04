@@ -15,7 +15,7 @@ public interface ProfessionnelDAO {
     public void save(CompteEntity c);
     public void update(ProfessionnelEntity c);
     public void delete(ProfessionnelEntity c);
-    public ProfessionnelEntity find(long id);
+    public ProfessionnelEntity find(String id);
     public List<ProfessionnelEntity> findAll();
     public List<ProfessionnelEntity> findByName(String nom);
 }

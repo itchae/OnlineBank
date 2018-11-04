@@ -11,5 +11,5 @@ package services;
  */
 public interface ConnectService {
     public String welcome(String nom);
-    public long connection(String login, String pwd);
+    public String connection(String login, String pwd);
 }
