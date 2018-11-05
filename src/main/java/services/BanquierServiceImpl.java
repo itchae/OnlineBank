@@ -6,7 +6,7 @@
 package services;
 
 import dao.BanquierDAO;
-import dao.BanquierEntity;
+import entities.BanquierEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

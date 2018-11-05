@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import dao.BankAccountEntity;
+import entities.BankAccountEntity;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

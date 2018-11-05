@@ -5,6 +5,7 @@
  */
 package dao;
 
+import entities.VirementEntity;
 import java.util.List;
 
 /**

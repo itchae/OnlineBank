@@ -6,11 +6,11 @@
 package services;
 
 import dao.BankAccountDAO;
-import dao.BankAccountEntity;
+import entities.BankAccountEntity;
 import dao.CompteDAO;
-import dao.CompteEntity;
+import entities.CompteEntity;
 import dao.ParticulierDAO;
-import dao.ParticulierEntity;
+import entities.ParticulierEntity;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

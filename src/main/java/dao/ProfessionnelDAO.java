@@ -5,6 +5,8 @@
  */
 package dao;
 
+import entities.ProfessionnelEntity;
+import entities.CompteEntity;
 import java.util.List;
 
 /**

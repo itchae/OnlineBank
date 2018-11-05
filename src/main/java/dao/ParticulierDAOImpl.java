@@ -5,6 +5,8 @@
  */
 package dao;
 
+import entities.CompteEntity;
+import entities.ParticulierEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

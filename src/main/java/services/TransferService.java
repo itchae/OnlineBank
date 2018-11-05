@@ -5,8 +5,8 @@
  */
 package services;
 
-import dao.CompteEntity;
-import dao.VirementEntity;
+import entities.CompteEntity;
+import entities.VirementEntity;
 import java.util.List;
 
 /**

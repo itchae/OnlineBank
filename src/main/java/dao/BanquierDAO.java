@@ -5,6 +5,7 @@
  */
 package dao;
 
+import entities.BanquierEntity;
 import java.util.List;
 
 /**

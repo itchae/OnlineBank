@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import dao.CompteEntity;
+import entities.CompteEntity;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

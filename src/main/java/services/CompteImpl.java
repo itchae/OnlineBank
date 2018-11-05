@@ -6,14 +6,14 @@
 package services;
 
 import dao.BankAccountDAO;
-import dao.BankAccountEntity;
+import entities.BankAccountEntity;
 import dao.CompteDAO;
-import dao.CompteEntity;
-import dao.ParticulierEntity;
-import dao.ProfessionnelEntity;
-import dao.BanquierEntity;
+import entities.CompteEntity;
+import entities.ParticulierEntity;
+import entities.ProfessionnelEntity;
+import entities.BanquierEntity;
 import dao.VirementDAO;
-import dao.VirementEntity;
+import entities.VirementEntity;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

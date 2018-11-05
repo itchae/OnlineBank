@@ -6,7 +6,7 @@
 package services;
 
 import dao.CompteDAO;
-import dao.CompteEntity;
+import entities.CompteEntity;
 import dao.ParticulierDAO;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

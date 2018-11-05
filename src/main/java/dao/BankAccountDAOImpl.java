@@ -5,6 +5,7 @@
  */
 package dao;
 
+import entities.BankAccountEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

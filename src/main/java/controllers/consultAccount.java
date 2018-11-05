@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import dao.VirementEntity;
+import entities.VirementEntity;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
