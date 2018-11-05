@@ -20,9 +20,6 @@
       <li class="nav-item">
         <a class="nav-link" href="transfer.htm">Virement</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Ordre de bourse</a>
-      </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">

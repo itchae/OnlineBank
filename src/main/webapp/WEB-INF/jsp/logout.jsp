@@ -13,6 +13,9 @@
         <title>Successfuly Logout</title>
     </head>
     <body>
+        <jsp:include page="navbar.jsp"/>
+        <div class="container content rounded">
         <h1>You're logging out</h1>
+        </div>
     </body>
 </html>

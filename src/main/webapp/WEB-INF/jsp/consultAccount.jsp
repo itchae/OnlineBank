@@ -13,6 +13,7 @@
     </head>
     <body>
         <jsp:include page="navbar.jsp"/>
+        <div class="container content rounded">
         <h1>Consultation du compte</h1>
         <p> Emi : </p>
         <ul>
@@ -24,5 +25,6 @@
         <p>${printTo}</p>
         </ul></br>
         <a href="listAccount.htm">Retour à la liste des comptes</a>
+        </div>
     </body>
 </html>

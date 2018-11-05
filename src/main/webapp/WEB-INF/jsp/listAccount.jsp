@@ -30,10 +30,7 @@
         <p>Liste des comptes : </p>
         <ul>
         ${listeComptes}
-        </ul>
-        
-        <p>${listeBA}</p>
-        
+        </ul>        
         <!--<p>Liste des particuliers</p>
         <p>${listePart}</p>-->
                 </div>
