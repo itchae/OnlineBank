@@ -31,7 +31,7 @@ public class ContactController {
     @RequestMapping(value="contact", method=RequestMethod.GET)
     public ModelAndView init(HttpServletRequest request){
         HttpSession session = request.getSession();
-        String id = (String)session.getAttribute("id");
+        String id = (String)session.getAttribute("login");
         String mail = bs.getEmail(ps.getBanquier(id));
         String tel = bs.getPhone(ps.getBanquier(id));
         ModelAndView mav = new ModelAndView("contact");

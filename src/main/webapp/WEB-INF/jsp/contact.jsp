@@ -13,24 +13,23 @@
     </head>
     <body>
         <jsp:include page="navbar.jsp"/>
-        <div class="jumbotron container">
+        <div class="content container rounded">
             <h1 class="display-4">Contactez dès maintenant votre conseiller</h1>
             <p class="lead">Pour toute information n'hésitez pas à contacter votre conseiller</p>
             <hr class="my-4">
             <p>par mail : ${mail}</p>
             <p>ou par telephone : ${tel}</p>
-            <p>ou ici ;D </p>
+            <p>ou ici </p>
             <form>
-  
-  <div class="form-group">
-    <label for="exampleTextarea">Message :</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-      </div>
-        <a class="float-right" href="listAccount.htm">Retour à la liste des comptes</a>
+
+                <div class="form-group">
+                    <label for="exampleTextarea">Message :</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </body>
 </html>
 

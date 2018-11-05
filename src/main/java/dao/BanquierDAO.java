@@ -6,6 +6,7 @@
 package dao;
 
 import entities.BanquierEntity;
+import entities.CompteEntity;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  * @author lucille
  */
 public interface BanquierDAO {
-    public void save(BanquierEntity c);
+    public void save(CompteEntity c);
     public void update(BanquierEntity c);
     public void delete(BanquierEntity c);
     public BanquierEntity find(String id);

@@ -47,6 +47,6 @@ public class BanquierEntity extends CompteEntity{
 
     @Override
     public String toString() {
-        return "dao.ProfessionnelEntity[ super.getLogin()=" + super.getLogin() + " ]";
+        return "dao.BanquierEntity[ super.getLogin()=" + super.getLogin() + " ]";
     }
 }

@@ -6,6 +6,7 @@
 package dao;
 
 import entities.BanquierEntity;
+import entities.CompteEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,7 +26,7 @@ public class BanquierDAOImpl implements BanquierDAO {
     
     @Transactional
     @Override
-    public void save(BanquierEntity b) {
+    public void save(CompteEntity b) {
         b = em.merge(b);
         em.persist(b);
     }
