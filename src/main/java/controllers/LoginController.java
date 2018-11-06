@@ -50,7 +50,7 @@ public class LoginController {
     @RequestMapping(value="login", method=RequestMethod.GET)
     public ModelAndView init(){
         if (!created){
-            //init.InitService();
+            init.InitService();
             created=true;
         }
         ModelAndView mav = new ModelAndView("login");

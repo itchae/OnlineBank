@@ -23,5 +23,6 @@ public interface ProfessionelService {
     public void setPhone(String login,String value);
     public void setSiret(String login,String value);
     public boolean tryConnect(String login, String pwd);
+    public String getBanquier(String id);
     
 }

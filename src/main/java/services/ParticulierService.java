@@ -26,8 +26,7 @@ public interface ParticulierService {
     public void setPhone(String id,String value);
     public void setPrenom(String id,String value);
     public String getBanquier(String id);
-    public boolean tryConnect(String login, String pwd);
-    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, String idBanquier);
+    public boolean tryConnect(String login, String pwd); 
     public String printComptes();
     
 }

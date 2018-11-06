@@ -18,10 +18,13 @@
         <p>${resultat}</p>
         
         <FORM method="POST" ACTION="transfer.htm">
-            <P> Nommez la transaction : <INPUT Type="text" Name=nom></p>
-           <P> Entrez la somme à transferer : <INPUT Type=text Name=somme> </P>
-           <P> Entrez le compte a debiter : <INPUT Type=text Name=debiteur></P>
-           <P> Entrez le compte beneficieur : <INPUT Type=text Name=beneficieur></P>
+            <P> Nommez la transaction : <INPUT Type="text" Name=nom class="form-control"></p>
+           <P> Entrez la somme à transferer : <INPUT Type=text Name=somme class="form-control"> </P>
+           <P> Entrez le compte a debiter : 
+               <select name = "debiteur" size="1">
+                ${listeCompte}
+               </select></P>
+           <P> Entrez le compte beneficieur : <INPUT Type=text Name=beneficieur class="form-control"></P>
 	   <button type="submit" class="btn btn-primary">Transferer</button>
 	</FORM>
         </div>

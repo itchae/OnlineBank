@@ -36,23 +36,6 @@ public class ParticulierServiceImpl implements ParticulierService{
     }
     
     @Override
-    public String remplirdb(String nom, String prenom, String login, String mdp, String email, String phone, String adress, String idBanquier){
-        CompteEntity p = new ParticulierEntity(prenom, idBanquier, login, nom, mdp, email, phone, adress);
-        BankAccountEntity ba = new BankAccountEntity("Coucou", 1000);
-        BankAccountEntity ba2 = new BankAccountEntity("Hello", 200);
-        //baDao.save(ba);
-        //baDao.save(ba2);
-        //ba.addUser(p);
-        p.addBA(ba);
-        //ba2.addUser(p);
-        p.addBA(ba2);
-        particulierDao.save(p);
-        //baDao.save(ba);
-        //baDao.save(ba2);
-        return "C'est save ";
-    }
-    
-    @Override
     public String getLogin(String id) {
         return this.particulierDao.find(id).getLogin();
     }

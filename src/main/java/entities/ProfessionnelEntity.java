@@ -25,6 +25,14 @@ public class ProfessionnelEntity extends CompteEntity {
     
     @Column (name="idBanquier")
     private String idBanquier;
+
+    public String getIdBanquier() {
+        return idBanquier;
+    }
+
+    public void setIdBanquier(String idBanquier) {
+        this.idBanquier = idBanquier;
+    }
     
     public ProfessionnelEntity(){
         

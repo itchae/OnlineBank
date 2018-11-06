@@ -40,7 +40,18 @@ public class CompteImpl implements CompteService{
         List<BankAccountEntity> bankAccount = ce.getBa();
         String result="";
         for(int i=0; i<bankAccount.size();i++){
-            result +="<li><a href='consultAccount.htm?param="+bankAccount.get(i).getId()+"'>"+bankAccount.get(i).toString()+"</a></li>";
+            result +="<a href='consultAccount.htm?param="+bankAccount.get(i).getId()+"' class=\"list-group-item list-group-item-action\">"+bankAccount.get(i).toString()+"</a></li>";
+        }
+        return result;
+    }
+    
+    @Override
+    public String printListAccount(String login){
+        CompteEntity ce = this.c.find(login);
+        List<BankAccountEntity> bankAccount = ce.getBa();
+        String result="";
+        for(int i=0; i<bankAccount.size();i++){
+            result +="<option>"+bankAccount.get(i).getId();
         }
         return result;
     }
@@ -117,7 +128,7 @@ public class CompteImpl implements CompteService{
         String affichage = ""; 
         for(int i=0 ; i<liste.size() ; i++){
             if(liste.get(i).getIdActeur().equals(b)){
-                affichage += "<li> ";
+                affichage += "<li class=\"list-group-item list-group-item-success\"> ";
                 affichage += liste.get(i).getIntitule();
                 affichage += " ";
                 affichage += liste.get(i).getMontant();
@@ -138,7 +149,7 @@ public class CompteImpl implements CompteService{
         String affichage = ""; 
         for(int i=0 ; i<liste.size() ; i++){
             if(liste.get(i).getIdRecepteur().equals(b)){
-                affichage += "<li> ";
+                affichage += "<li class=\"list-group-item list-group-item-danger\"> ";
                 affichage += liste.get(i).getIntitule();
                 affichage += " ";
                 affichage += liste.get(i).getMontant();

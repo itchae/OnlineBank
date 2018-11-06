@@ -16,6 +16,7 @@ import java.util.List;
 public interface CompteService {
     public String getIntitule(String login);
     public String getSolde(String login);
+    public String printListAccount(String login);
     public String printAccount(String login);
     public void remplir(String intitule, double solde);
     public String compteRole(String login);

@@ -106,4 +106,9 @@ public class ProfessionelServiceImpl implements ProfessionelService{
         this.proDao.update(p);
     }
     
+    @Override
+    public String getBanquier(String id) {
+        return this.proDao.find(id).getIdBanquier();
+    }
+    
 }

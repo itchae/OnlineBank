@@ -28,9 +28,9 @@
         <% }%>
         </ul>-->
         <p>Liste des comptes : </p>
-        <ul>
+        <div class="list-group  list-group-flush">
         ${listeComptes}
-        </ul>        
+        </div>        
         <!--<p>Liste des particuliers</p>
         <p>${listePart}</p>-->
                 </div>

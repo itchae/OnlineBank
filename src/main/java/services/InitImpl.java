@@ -44,10 +44,10 @@ public class InitImpl implements InitService{
     
     @Override
     public void InitService() {
-        CompteEntity c = new ParticulierEntity("Charles", "Banquier1", "ok", "Henri", "ok", "Lemail", "Adresse", "0605040201");
-        CompteEntity c3 = new ProfessionnelEntity("pro", "proland", "pro", "pro@pro.pro", "1 rue des pros", "3615", "812154136541", "EIRL");
-        CompteEntity c2 = new ParticulierEntity("Charles", "Banquier1", "test", "Henri", "test", "Lemail", "Adresse", "0605040201");
-        CompteEntity banquier = new BanquierEntity("Edouard", "Banquier1", "Leclerc", "ok", "coucou", "place marechal leclerc", "065959599595");
+        CompteEntity c = new ParticulierEntity("Charles", "Banquier", "par", "Henri", "par", "Lemail", "Adresse", "0605040201");
+        CompteEntity c3 = new ProfessionnelEntity("pro", "Banquier", "pro", "pro@pro.pro", "1 rue des pros", "3615", "812154136541", "EIRL");
+        CompteEntity c2 = new ParticulierEntity("Charles", null, "par2", "Henri", "par2", "Lemail", "Adresse", "0605040201");
+        CompteEntity banquier = new BanquierEntity("Edouard", "Banquier", "Leclerc", "Banquier", "coucou", "place marechal leclerc", "065959599595");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
         BankAccountEntity ba3 = new BankAccountEntity("Compte3", 300);
@@ -55,14 +55,14 @@ public class InitImpl implements InitService{
         c.addBA(ba);
         c.addBA(ba2);
         
-        //c2.addBA(ba3);
+        c2.addBA(ba3);
         //c2.addBA(ba2);
         
         //bank.save(b);
         bank.save(banquier);
         p.save(c);
         pro.save(c3);
-        //p.save(c2);
+        p.save(c2);
     }
     
 }

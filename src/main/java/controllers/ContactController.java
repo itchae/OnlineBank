@@ -32,8 +32,14 @@ public class ContactController {
     public ModelAndView init(HttpServletRequest request){
         HttpSession session = request.getSession();
         String id = (String)session.getAttribute("login");
-        String mail = bs.getEmail(ps.getBanquier(id));
-        String tel = bs.getPhone(ps.getBanquier(id));
+        String banquier = ps.getBanquier(id);
+        String mail = "";
+        String tel = "";
+        if(banquier != null){
+            mail = bs.getEmail(ps.getBanquier(id));
+            tel = bs.getPhone(ps.getBanquier(id));
+        }
+        
         ModelAndView mav = new ModelAndView("contact");
         mav.addObject("mail", mail);
         mav.addObject("tel", tel);
