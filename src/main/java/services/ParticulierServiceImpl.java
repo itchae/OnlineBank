@@ -62,21 +62,6 @@ public class ParticulierServiceImpl implements ParticulierService{
     }
 
     @Override
-    public boolean tryConnect(String login, String pwd) {
-        List<ParticulierEntity> listePar = this.particulierDao.findAll();
-        String pwdTrue = "";
-        boolean res = false; 
-        int index = listePar.indexOf(login);
-        if (index != -1){
-            pwdTrue = listePar.get(index).getPassword();
-            if (pwd.equals(pwdTrue)){
-                res = true; 
-            }
-        }
-        return res;
-    }
-
-    @Override
     public String printComptes() {
         List<ParticulierEntity> particulier = this.particulierDao.findAll();
         String result="";

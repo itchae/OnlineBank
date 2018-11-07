@@ -47,7 +47,7 @@ public class InitImpl implements InitService{
         CompteEntity c = new ParticulierEntity("Charles", "Banquier", "par", "Henri", "par", "Lemail", "Adresse", "0605040201");
         CompteEntity c3 = new ProfessionnelEntity("pro", "Banquier", "pro", "pro@pro.pro", "1 rue des pros", "3615", "812154136541", "EIRL");
         CompteEntity c2 = new ParticulierEntity("Charles", null, "par2", "Henri", "par2", "Lemail", "Adresse", "0605040201");
-        CompteEntity banquier = new BanquierEntity("Edouard", "Banquier", "Leclerc", "Banquier", "coucou", "place marechal leclerc", "065959599595");
+        CompteEntity banquier = new BanquierEntity("Edouard", "Banquier", "Leclerc", "Banquier", "lebanquier@luto.fr", "place marechal leclerc", "065959599595");
         BankAccountEntity ba = new BankAccountEntity("Compte1", 1000);
         BankAccountEntity ba2 = new BankAccountEntity("Compte2", 200);
         BankAccountEntity ba3 = new BankAccountEntity("Compte3", 300);

@@ -35,14 +35,21 @@ public class ContactController {
         String banquier = ps.getBanquier(id);
         String mail = "";
         String tel = "";
+        String prenom = "";
+        String nom = "";
         if(banquier != null){
-            mail = bs.getEmail(ps.getBanquier(id));
-            tel = bs.getPhone(ps.getBanquier(id));
+            prenom = bs.getPrenom(banquier);
+            nom = bs.getNom(banquier);
+            mail = bs.getEmail(banquier);
+            tel = bs.getPhone(banquier);
         }
         
         ModelAndView mav = new ModelAndView("contact");
         mav.addObject("mail", mail);
         mav.addObject("tel", tel);
+        mav.addObject("nom", nom);
+        mav.addObject("prenom", prenom);
+        
         return mav;
     }
 }

@@ -60,6 +60,11 @@ public class BanquierServiceImpl implements BanquierService {
     public String getPrenom(String id) {
         return this.banquierDao.find(id).getPrenom();
     }
+    
+    @Override
+    public String getNom(String id) {
+        return banquierDao.find(id).getNom();
+    }
 
     @Override
     public void setMdp(String id, String value) {

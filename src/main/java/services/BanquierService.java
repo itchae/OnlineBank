@@ -17,6 +17,7 @@ public interface BanquierService {
     public String getPhone(String id);
     public String getAdresse(String id);
     public String getPrenom(String id);
+    public String getNom(String id);
     public void setMdp(String id,String value);
     public void setEmail(String id,String value);
     public void setAdresse(String id,String value);
