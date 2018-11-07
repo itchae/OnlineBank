@@ -14,7 +14,7 @@
     <body>
         <jsp:include page="navbar.jsp"/>
         <div class="content container rounded">
-            <h1 class="display-4">Contactez dès maintenant votre conseiller</h1>
+            <h1>Contactez dès maintenant votre conseiller</h1>
             <p class="lead">Pour toute information n'hésitez pas à contacter votre conseiller</p>
             <hr class="my-4">
             <p>par mail : ${mail}</p>
