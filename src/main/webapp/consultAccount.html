@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Consultation</title>
+        <link rel="html-import" href="navbar.html">
+    </head>
+    <body>
+        $(function(){
+            $("#includedContent").load("b.html"); 
+        });
+        <div class="container content rounded">
+            <h1>Consultation du compte</h1>
+            <p> Emi : </p>
+            <ul>
+                <p>${printFrom}</p>
+            </ul>
+
+            <p> Recu : </p>
+            <ul>
+                <p>${printTo}</p>
+            </ul></br>
+            <div>
+            <a href="listAccount.htm" class="btn btn-primary">Retour à la liste des comptes</a>
+            </div>
+            <br/>
+        </div>
+    </body>
+</html>
