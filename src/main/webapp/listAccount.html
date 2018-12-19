@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Liste des comptes</title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container content rounded">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1>Liste des comptes</h1>
+
+                    <p>Liste des comptes : </p>
+                    <div class="list-group">
+                        ${listeComptes}
+                    </div>
+                    <br/>
+                    <!--<p>Liste des particuliers</p>
+                    <p>${listePart}</p>-->
+                </div>
+            </div>
+        </div>
     </body>
 </html>
